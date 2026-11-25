@@ -1,0 +1,2213 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Вводный курс — Корпорация Туризм.РФ</title>
+<meta name="description" content="Вводный курс для новых сотрудников АО «Корпорация Туризм.РФ»: институт развития туризма, структура и руководство, первый рабочий день, распорядок, отпуск, доступы и ПО, корпоративная культура.">
+<meta name="theme-color" content="#0c73fe">
+<style>
+  :root{
+    --blue:#0c73fe;
+    --blue-600:#0a64dd;
+    --ink:#0c131d;
+    --ink-2:#5a6472;
+    --graphite:#141414;
+    --graphite-2:#2b2b2b;
+    --graphite-3:#373737;
+    --paper:#ffffff;
+    --grey:#f2f4f5;
+    --canvas:#f6f7f9;
+    --sky:#cfe9ff;
+    --lime:#c9f26b;
+    --violet:#7c5cff;
+    --font:"Inter","SF Pro Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    --font-head:"RF Dewi Wide","RF Dewi Extended","RF Dewi",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  }
+  @font-face{
+    font-family:"RF Dewi Wide";font-style:normal;font-weight:600 900;font-display:swap;
+    src:url(fonts/RFDewiExtended-Black.ttf) format("truetype");
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:82px}
+  body{
+    margin:0;background:var(--canvas);color:var(--ink);font-family:var(--font);
+    font-size:17px;line-height:1.55;letter-spacing:-.005em;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;
+  }
+  @supports (overflow-x:clip){ body{overflow-x:clip} }
+  img,svg{max-width:100%}
+  a{color:inherit}
+  button{font:inherit;color:inherit}
+  h1,h2,h3,h4{margin:0;font-family:var(--font-head);font-weight:700;letter-spacing:-.02em;line-height:1.02}
+  p{margin:0}
+  ul{margin:0;padding:0;list-style:none}
+  :focus-visible{outline:2.5px solid var(--blue);outline-offset:3px;border-radius:6px}
+  .vh{position:fixed;top:0;left:0;width:0;height:100svh;pointer-events:none;visibility:hidden}
+  .skip{position:absolute;left:12px;top:-80px;background:var(--ink);color:#fff;padding:12px 18px;border-radius:12px;z-index:200;transition:top .2s}
+  .skip:focus{top:12px}
+
+  .container{width:min(1240px,calc(100% - 44px));margin-inline:auto}
+
+  .section{width:min(1360px,calc(100% - 28px));margin:12px auto;border-radius:18px;padding-block:clamp(40px,8vw,96px);position:relative;overflow:hidden;scroll-margin-top:0}
+
+  .s-white{--surface:#fff;--fg:var(--ink);--muted:var(--ink-2);--tab-bg:var(--grey);--tab-active:var(--ink);--tab-active-fg:#fff}
+  .s-grey{--surface:var(--grey);--fg:var(--ink);--muted:var(--ink-2);--tab-bg:#fff;--tab-active:var(--ink);--tab-active-fg:#fff}
+  .s-blue{--surface:var(--blue);--fg:#fff;--muted:rgba(255,255,255,.85);--tab-bg:rgba(255,255,255,.16);--tab-active:#fff;--tab-active-fg:var(--ink)}
+  .s-ink{--surface:var(--graphite);--fg:#fff;--muted:rgba(255,255,255,.72);--tab-bg:rgba(255,255,255,.12);--tab-active:#fff;--tab-active-fg:var(--ink)}
+  .s-sky{--surface:var(--sky);--fg:var(--ink);--muted:rgba(12,19,29,.7);--tab-bg:#fff;--tab-active:var(--ink);--tab-active-fg:#fff}
+  .s-lime{--surface:var(--lime);--fg:var(--ink);--muted:rgba(12,19,29,.74);--tab-bg:#fff;--tab-active:var(--ink);--tab-active-fg:#fff}
+  .s-ghost{--surface:transparent;--fg:var(--ink);--muted:var(--ink-2);--tab-bg:rgba(255,255,255,.7);--tab-active:var(--ink);--tab-active-fg:#fff}
+  #values .card{background:#fff}
+
+  /* values: tilt stack */
+  #values{overflow:visible}
+  #values.stack--live{padding-block:0}
+  .stack-track{position:relative;width:100%}
+  .stack-stage{width:100%;max-width:1360px;margin-inline:auto;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .stack-head{margin-bottom:clamp(28px,3.6vw,48px)}
+  #values h2{margin-inline:auto}
+  .stack-deck{position:relative;width:100%;display:grid;gap:12px}
+  .vcard{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:min(52svh,440px);padding:clamp(24px,3.4vw,40px);border-radius:clamp(30px,4vw,54px);background:var(--vc,#0c73fe);color:var(--vc-fg,#fff);text-align:left;overflow:hidden;box-shadow:0 18px 44px -14px rgba(10,20,40,.42)}
+  .vcard__num{font-family:var(--font-head);font-weight:700;font-size:clamp(34px,5.6vw,58px);line-height:.86;letter-spacing:-.04em;opacity:.5}
+  .vcard__body{position:relative;z-index:2;margin-top:clamp(20px,4vw,44px)}
+  .vcard__body h3{font-size:clamp(30px,7.2vw,54px);line-height:1;letter-spacing:-.03em;margin-bottom:14px;color:inherit}
+  .vcard__body p{font-size:clamp(19px,3.6vw,26px);line-height:1.5;letter-spacing:-.015em;color:inherit;opacity:.9;max-width:44ch}
+  .stack--live .stack-track{height:calc(var(--pin,100svh) * 4)}
+  .stack--live .stack-head{margin-bottom:clamp(56px,7vh,84px)}
+  .stack--live .stack-stage{position:sticky;top:0;height:var(--pin,100svh);justify-content:flex-start;padding:clamp(84px,10.5vh,116px) 0 clamp(28px,5vh,56px)}
+  .stack--live .stack-deck{display:block;height:min(52svh,470px);margin-top:0}
+  .stack--live .vcard{position:absolute;inset:0;min-height:0;transform-origin:50% 0;will-change:transform}
+  .stack--animated .vcard{transition:transform .55s cubic-bezier(.2,.9,.25,1),opacity .38s ease}
+  .stack--noanim .vcard{transition:none}
+  @media (max-width:760px){
+    .stack-stage{padding-inline:0}
+    .stack--live .stack-stage{justify-content:center;padding:clamp(74px,9vh,96px) 0 clamp(24px,4vh,40px)}
+    .stack--live .stack-deck{height:min(46svh,380px)}
+    .vcard{min-height:min(46svh,360px)}
+  }
+  @supports (aspect-ratio:1/1){
+    .stack--live .stack-deck{height:auto;aspect-ratio:1/1;max-height:calc(100svh - 240px)}
+    @media (max-width:760px){.stack--live .stack-deck{max-height:calc(100svh - 200px)}}
+  }
+  .section{background:var(--surface);color:var(--fg)}
+
+  .eyebrow{display:block;text-align:center;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+  .hero .eyebrow{color:rgba(255,255,255,.88)}
+
+  h2{font-size:clamp(30px,7.2vw,54px);max-width:22ch}
+  .sec-head{margin-bottom:clamp(20px,3.4vw,32px)}
+  .sec-head .eyebrow{text-align:left;margin-bottom:12px;color:var(--muted)}
+  .sec-lead{margin-top:14px;max-width:52ch;font-size:clamp(14.5px,1.7vw,16.5px);line-height:1.5;color:var(--muted)}
+
+  /* header */
+  .top{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.9);backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px);border-bottom:1px solid rgba(13,25,43,.07)}
+  .top.is-hero{background:var(--blue);border-bottom-color:rgba(255,255,255,.16);backdrop-filter:none;-webkit-backdrop-filter:none}
+  .top.is-hero .brand-t{color:#fff}
+  .top.is-hero .brand-t em{color:rgba(255,255,255,.75)}
+  .top.is-hero .mark{background:#fff}
+  .top.is-hero .mark svg{color:var(--blue)}
+  .top.is-hero .nav a{color:rgba(255,255,255,.86)}
+  .top.is-hero .nav a:hover,.top.is-hero .nav a[aria-current="true"]{background:rgba(255,255,255,.18);color:#fff}
+  .top.is-hero .menu-btn{background:rgba(255,255,255,.18);color:#fff}
+  .top-in{width:min(1240px,calc(100% - 34px));margin-inline:auto;display:flex;align-items:center;gap:14px;height:58px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
+  .mark{width:30px;height:30px;border-radius:9px;background:var(--blue);display:grid;place-items:center;flex:none}
+  .mark svg{width:18px;height:18px;color:#fff}
+  .brand-t{font-size:14px;font-weight:800;letter-spacing:-.01em;line-height:1.1}
+  .brand-t em{display:block;font-style:normal;font-weight:600;color:var(--ink-2);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase}
+  .nav{display:none;margin-left:auto;gap:1px}
+  .nav a{padding:9px 10px;border-radius:999px;font-size:13.5px;font-weight:600;color:var(--ink-2);text-decoration:none;white-space:nowrap}
+  .nav a:hover,.nav a[aria-current="true"]{background:var(--grey);color:var(--ink)}
+  .menu-btn{margin-left:auto;display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 15px;border-radius:999px;border:0;background:var(--grey);font-size:13.5px;font-weight:700;cursor:pointer}
+  .menu-btn svg{width:16px;height:16px}
+  .scrollbar{position:fixed;left:0;top:0;height:3px;width:0;background:var(--blue);z-index:70;border-radius:0 3px 3px 0;transition:width .1s linear}
+
+  /* sheet */
+  .sheet{position:fixed;inset:0;z-index:90;background:#fff;visibility:hidden;transform:translateY(100%);transition:transform .34s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;padding:calc(14px + env(safe-area-inset-top)) 17px calc(20px + env(safe-area-inset-bottom))}
+  .sheet[data-open="true"]{transform:none;visibility:visible}
+  .sheet-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+  .sheet-close{width:44px;height:44px;border-radius:999px;border:0;background:var(--grey);display:grid;place-items:center;cursor:pointer}
+  .sheet-list{overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .sheet-list a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:15px 4px;border-bottom:1px solid rgba(13,25,43,.07);text-decoration:none;font-size:19px;font-weight:650;letter-spacing:-.02em}
+  /* mobile pill header */
+  .mpill{display:none}
+  @media (max-width:759px){
+    .top{display:none}
+    .sheet{display:none}
+    .mpill{display:flex;flex-direction:column-reverse;position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:85;border-radius:26px;background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px);box-shadow:0 10px 30px rgba(6,20,44,.18),0 0 0 1px rgba(13,25,43,.06);overflow:hidden;max-height:56px;transition:max-height .34s cubic-bezier(.4,0,.2,1)}
+    .mpill[data-open="true"]{max-height:80svh}
+    .mpill[data-open="true"] .mpill-bar{display:none}
+    .mpill-bar{display:flex;align-items:center;height:56px;padding:0 8px 0 14px;gap:4px}
+    .mpill-brand{position:relative;z-index:2;flex:none;display:grid;place-items:center;width:42px;height:42px;margin-left:0;border-radius:999px;color:var(--ink);text-decoration:none}
+    .mpill-brand svg{width:26px;height:26px;display:block}
+    .mpill-tabs{display:flex;align-items:center;height:56px;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;flex:1;min-width:0;margin-left:2px;padding-left:2px;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16px,#000 calc(100% - 12px),transparent);mask-image:linear-gradient(90deg,transparent 0,#000 16px,#000 calc(100% - 12px),transparent)}.mpill-tabs[data-edge="start"]{-webkit-mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 12px),transparent);mask-image:linear-gradient(90deg,#000 0,#000 calc(100% - 12px),transparent)}.mpill-tabs[data-edge="end"]{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16px,#000 100%);mask-image:linear-gradient(90deg,transparent 0,#000 16px,#000 100%)}.mpill-tabs[data-edge="none"]{-webkit-mask-image:none;mask-image:none}
+    .mpill-tabs::-webkit-scrollbar{display:none}
+    .mpill-tabs a{flex:none;display:inline-flex;align-items:center;height:34px;padding:0 12px;border-radius:999px;background:var(--grey);font-size:12.5px;line-height:1;font-weight:650;color:var(--ink-2);text-decoration:none;white-space:nowrap}
+    .mpill-tabs a[aria-current="true"]{background:var(--ink);color:#fff}
+    .mpill-burger{margin-left:2px;flex:none;width:42px;height:42px;border-radius:999px;border:0;background:var(--grey);display:grid;place-items:center;cursor:pointer}
+    .mpill-burger svg{width:22px;height:22px}
+    .mpill-panel{display:flex;flex-direction:column;padding:4px 8px 10px;max-height:calc(80svh - 12px);overflow:hidden}
+    .mpill-head{display:flex;flex:none;align-items:center;justify-content:space-between;gap:10px;padding:10px 6px 12px}
+    .mpill-head span{font-family:var(--font-head);font-weight:800;font-size:17px;letter-spacing:-.01em}
+    .mpill-close{width:38px;height:38px;border-radius:999px;border:0;background:var(--grey);color:var(--ink);display:grid;place-items:center;cursor:pointer}
+    .mpill-close svg{width:20px;height:20px}
+    .mpill-links{display:grid;gap:2px;flex:1 1 auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch}
+    .mpill-contacts{flex:none;margin-top:8px;padding:10px 10px 2px;border-top:1px solid rgba(13,25,43,.08);display:grid;gap:6px}
+    .mpill-contacts__t{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+    .mpill-contacts a{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13px;color:var(--ink);text-decoration:none}
+    .mpill-contacts a span{color:var(--blue);font-weight:650}
+    .mpill-links a{padding:8px 12px;border-radius:12px;font-size:15px;font-weight:650;color:var(--ink);text-decoration:none}
+    .mpill-panel a{text-decoration:none}
+    html{scroll-padding-top:12px}
+    body{padding-bottom:84px}
+  }
+
+  /* hero */
+  .hero{width:100%;max-width:none;margin:0;border-radius:0;background:var(--blue);color:#fff;position:relative;text-align:center;padding-block:clamp(56px,11vw,150px) clamp(60px,12vw,150px)}
+  .hero-pin{position:relative;display:grid;place-items:center;min-height:clamp(400px,58vh,600px)}
+  .hero-cards{position:absolute;inset:0;pointer-events:none}
+  .hero-scatter{position:absolute;inset:0;pointer-events:none}
+  .hero-copy{position:relative;z-index:3;width:min(780px,100%);margin-inline:auto;padding-inline:22px;transform-origin:50% 50%;will-change:transform,opacity}
+  .hero-card{position:absolute;left:50%;top:50%;aspect-ratio:4/5;border-radius:16px;opacity:0;background:rgba(255,255,255,.12);box-shadow:0 14px 28px rgba(6,20,44,.26),0 0 0 1px rgba(255,255,255,.16) inset}
+  .hero-card img{display:block;width:100%;height:100%;object-fit:cover;border-radius:16px}
+  .hero-hint{position:absolute;left:0;right:0;bottom:clamp(12px,3vw,26px);z-index:3;display:grid;justify-items:center;gap:9px;font-size:10.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.66);opacity:0;transition:opacity .35s ease}
+  .hero-hint i{width:1px;height:30px;background:linear-gradient(rgba(255,255,255,.6),rgba(255,255,255,0))}
+  .hero--auto{min-height:100svh;display:flex;align-items:stretch;padding:0;overflow:hidden}
+  .hero--auto .hero-pin{position:relative;width:100%;height:100svh;min-height:560px;overflow:hidden}
+  .hero--auto .hero-hint{opacity:1}
+  @media (max-width:759px){
+    
+  }
+  .hero h1{font-size:clamp(38px,10.4vw,84px);line-height:.96;max-width:16ch;margin-inline:auto}
+  .hero h1 mark{background:none;color:var(--lime)}
+  .hero-sub{margin-top:20px;margin-inline:auto;max-width:44ch;font-size:clamp(16px,1.6vw,19px);line-height:1.5;color:rgba(255,255,255,.92)}
+  .hero-cta{display:inline-flex;align-items:center;gap:10px;margin-top:clamp(24px,4vw,34px);padding:15px 26px;border-radius:999px;background:var(--lime);color:var(--ink);font-size:15px;font-weight:800;letter-spacing:-.01em;text-decoration:none;transition:transform .18s ease,filter .18s ease}
+  .hero-cta:hover{filter:brightness(.96)}
+  .hero-cta:active{transform:scale(.985)}
+  .hero-cta svg{width:16px;height:16px}
+
+  /* welcome */
+  .quote{font-size:clamp(19px,3.6vw,26px);line-height:1.5;letter-spacing:-.015em;font-weight:400;max-width:40ch}
+  .quote p+p{margin-top:14px}
+  .person{display:flex;align-items:center;gap:14px;margin-top:clamp(32px,6vw,52px)}
+  .avatar{width:92px;height:92px;border-radius:999px;background:var(--grey);display:grid;place-items:center;flex:none;overflow:hidden}
+  .avatar svg{width:28px;height:28px;color:#9aa4b2}
+  .person-name{display:block;font-size:15.5px;font-weight:750;letter-spacing:-.01em}
+  .person-role{display:block;font-size:13.5px;color:var(--ink-2);line-height:1.35;margin-top:3px}
+
+  /* bento */
+  .bento{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .bento>*{grid-column:span 2}
+  .card{background:#fff;border:0;border-radius:22px;padding:18px;position:relative;display:block;text-decoration:none;color:var(--ink);--muted:#5a6472;box-shadow:none;transition:transform .2s ease}
+  a.card:active{transform:scale(.99)}
+  .card h3{font-size:17px;line-height:1.22;letter-spacing:-.015em;margin-bottom:6px}
+  .card p{font-size:14px;line-height:1.45;color:var(--muted)}
+  .card .warn{display:flex;gap:10px;align-items:flex-start;margin-top:12px;padding:12px 14px;border-radius:14px;background:rgba(255,197,61,.2);color:var(--ink)}.warn__ico{width:20px;height:20px;flex:none;margin-top:1px;color:#e08700}.warn span{display:block;font-size:13.5px;line-height:1.42}.ico-wrap{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:rgba(12,115,254,.09);color:var(--blue);margin-bottom:14px}
+  .card .ico-wrap--lime,.ico-wrap--lime{background:rgba(201,242,107,.5);color:#3f6b00}
+
+  /* perks */
+  .perk{padding:12px 12px 18px;background:#fff;display:flex;flex-direction:column;position:relative}
+  .perk__media{position:relative;aspect-ratio:4/3;border-radius:18px 18px 18px 0;overflow:hidden;margin-bottom:22px}
+  .perk__media img{display:block;width:100%;height:100%;object-fit:cover;background:#e9edf0;transition:transform .4s ease-in-out}
+  .perk:hover .perk__media img{transform:scale(1.03);transition:transform .6s ease-in-out}
+  .perk__tag{--cut:8px;position:absolute;left:0;bottom:0;z-index:5;display:flex;align-items:flex-end;gap:4px;max-width:calc(100% - 21px);padding:5px 10px 4px 6px;background:#fff;color:#5a6472;font-size:13px;font-weight:600;line-height:1.2;letter-spacing:-.01em;border-radius:0 10px 0 0}
+  .perk__tag:before,.perk__tag:after{content:"";position:absolute;width:var(--cut);height:var(--cut);background:#fff;pointer-events:none;-webkit-mask:radial-gradient(circle at 100% 0,transparent calc(var(--cut) - .25px),#000 calc(var(--cut) + .25px));mask:radial-gradient(circle at 100% 0,transparent calc(var(--cut) - .25px),#000 calc(var(--cut) + .25px))}
+  .perk__tag:before{top:calc(-1 * var(--cut));left:0;height:calc(var(--cut) + 1px)}
+  .perk__tag:after{right:calc(-1 * var(--cut));bottom:0;width:calc(var(--cut) + 1px)}
+  .perk h3{margin-bottom:6px}
+  .perk p{font-size:13.5px;line-height:1.5}
+  .ico-wrap svg{width:20px;height:20px}
+  .card-num{font-size:11px;font-weight:800;color:var(--muted);letter-spacing:.14em;text-transform:uppercase}
+  .p-row{display:flex;align-items:center;gap:18px;margin-top:14px}
+  .card>.p-row:first-child{margin-top:0}
+  .p-row b{display:block;font-size:16px;line-height:1.22;letter-spacing:-.015em}
+  .p-row .p-role{display:block;font-size:13px;line-height:1.35;color:var(--muted);margin-top:3px}
+  .av{width:88px;height:88px;border-radius:999px;background:var(--grey);display:grid;place-items:center;flex:none;font-family:var(--font-head);font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--ink-2)}
+  .av--dark{background:rgba(255,255,255,.14);color:#fff}
+  .av--img{width:100px;height:100px;object-fit:cover;object-position:center;background:#eceff2;border:1px solid rgba(13,25,43,.06)}
+  .avatar-img{width:100%;height:100%;object-fit:cover;object-position:center}
+  .card-wide{background:var(--blue);color:#fff;padding:22px}
+  .card-wide .ico-wrap{background:rgba(255,255,255,.18);color:#fff}
+  .card-wide h3{font-size:clamp(20px,4.6vw,26px);margin-bottom:8px}
+  .card-wide p{color:rgba(255,255,255,.88);font-size:14.5px;max-width:32ch}
+  .card-wide .big{font-size:clamp(30px,8vw,42px);font-weight:800;letter-spacing:-.03em;line-height:1;margin-top:14px}
+
+  .copy{display:inline-flex;align-items:center;gap:7px;margin-top:12px;padding:9px 13px;border-radius:999px;background:var(--grey);border:0;color:var(--ink);font-size:13px;font-weight:700;cursor:pointer}
+  .hrs-note{margin-top:6px}
+  .hrs-sep{height:1px;background:rgba(12,19,29,.12);margin:22px 0 18px}
+  .hrs-cap{margin:0 0 12px;font-size:13.5px;line-height:1.45;color:rgba(12,19,29,.72)}
+  .hrs-note .copy{margin-top:0}
+  .card-wide .copy{background:rgba(255,255,255,.18);color:#fff}
+  .copy svg{width:14px;height:14px;opacity:.85;flex:none}
+  .copy[data-done="true"]{background:#e8f7ef;color:#126b45}
+  .copy--nowrap{white-space:nowrap}
+  @media (max-width:380px){.copy--nowrap{font-size:12.5px;padding:0 14px}}
+
+  .year{font-size:clamp(50px,13vw,84px);font-weight:800;letter-spacing:-.05em;line-height:.85;margin-bottom:12px;color:var(--ink)}
+  .pill-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+  .pill{font-size:11.5px;font-weight:700;letter-spacing:.02em;padding:6px 11px;border-radius:999px;background:var(--grey);color:var(--ink-2)}
+
+  /* org scheme */
+  .org{max-width:760px}
+  .org-root{background:var(--ink);color:#fff;border-radius:20px;padding:18px}
+  .org-root .card-num{color:rgba(255,255,255,.55)}
+  .org-root h3{margin-top:10px;font-size:20px;letter-spacing:-.02em}
+  .org-root p{margin-top:4px;font-size:13.5px;color:rgba(255,255,255,.72)}
+  .org-chain{position:relative;margin-top:10px;padding-left:24px}
+  .org-chain::before{content:"";position:absolute;left:5px;top:-10px;bottom:20px;width:2px;background:rgba(12,115,254,.32);border-radius:2px}
+  .org-node{position:relative;display:flex;gap:12px;background:#fff;border-radius:16px;padding:14px 16px;margin-bottom:8px}
+  .org-node::before{content:"";position:absolute;left:-22px;top:22px;width:10px;height:10px;border-radius:50%;background:#fff;border:2px solid var(--blue)}
+  .org-node h4{font-size:14.5px;letter-spacing:-.012em;margin-bottom:2px;line-height:1.25}
+  .org-node p{font-size:12.5px;color:var(--ink-2);line-height:1.35}
+  .org-k{font-size:11px;font-weight:800;color:var(--blue);letter-spacing:.08em;padding-top:2px;width:18px;flex:none}
+
+  /* rail */
+  .rail{display:flex;align-items:stretch;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 0 8px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .rail::-webkit-scrollbar{display:none}
+  .rail>*{scroll-snap-align:start;flex:0 0 82%;max-width:360px}
+  .rail>.r-sm{flex-basis:68%}
+
+  @media (max-width:759px){
+    .rail,.tabs{margin-inline:-22px;padding-inline:22px;scroll-padding-left:22px}
+    .tabs{margin-bottom:16px}
+  }
+
+  /* tabs */
+  .tabs{display:flex;gap:7px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin-bottom:16px}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:none;padding:11px 16px;border-radius:999px;border:0;background:var(--tab-bg);color:var(--fg);font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .18s ease,color .18s ease}
+  .tab[aria-selected="true"]{background:var(--tab-active);color:var(--tab-active-fg)}
+  .panel[hidden]{display:none}
+  .panel{animation:fade .28s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  /* lists */
+  .two{display:grid;gap:10px}
+  .rows{display:grid;gap:8px}
+  .row{display:flex;gap:13px;align-items:flex-start;padding:14px 16px;background:#fff;border-radius:16px;color:var(--ink);--muted:#5a6472}
+  .row h4{font-size:15.5px;letter-spacing:-.012em;margin-bottom:3px}
+  .row p{font-size:13.5px;color:var(--muted);line-height:1.45}
+  .row .row-k{flex:none;width:34px;font-weight:800;font-size:12.5px;color:var(--muted);letter-spacing:.02em;padding-top:2px}
+  .row svg.r-ico{width:18px;height:18px;flex:none;margin-top:2px;color:var(--blue)}.app-logo{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:10px;margin-bottom:9px;font-family:var(--font-head);font-weight:800;font-size:12.5px;letter-spacing:-.02em;line-height:1}.app-logo svg{width:18px;height:18px;display:block}.prog-title{font-family:var(--font-head);font-weight:800;font-size:15px;letter-spacing:-.01em;margin:20px 0 10px}.prog-title--first{margin-top:2px}.prog-card{display:flex;gap:14px;align-items:flex-start}.prog-card .app-logo{margin-bottom:0;flex:none}.prog-body{min-width:0;flex:1 1 auto}.prog-body h4{font-size:15px;letter-spacing:-.012em;margin:0}.prog-body p{font-size:13.5px;line-height:1.45;color:var(--muted);margin:3px 0 0}.prog-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .rows--plain .row{background:transparent;padding-left:0;padding-right:0;border-radius:0}
+  .rows--plain .row+.row{border-top:1px solid rgba(13,25,43,.08);padding-top:14px}
+  .rows--plain .row:first-child{padding-top:0}
+  .rows--plain .row:last-child{padding-bottom:0}
+  .rows--soft .row{background:var(--grey)}
+  #corp .card{background:#f6f7f9}
+  #vacation .card,#vacation .rows--soft .row{background:#f6f7f9}
+
+  .kv{display:grid;gap:8px}
+  .kv div{display:flex;justify-content:space-between;gap:14px;padding:14px 16px;background:#fff;border-radius:16px;font-size:14.5px;color:var(--ink)}
+  .kv b{font-weight:800;text-align:right}
+
+  .dot{width:8px;height:8px;border-radius:50%;display:inline-block;flex:none}
+  .dl{margin-top:6px}
+  .dl li{display:flex;gap:10px;align-items:flex-start;padding:11px 0;font-size:13.5px;line-height:1.45;color:var(--muted);border-top:1px solid rgba(13,25,43,.08)}
+  .dl li:first-child{border-top:0;padding-top:0}
+  .dl li:last-child{padding-bottom:0}
+  .dl li::before{content:"";width:7px;height:7px;border-radius:50%;flex:none;margin-top:7px}
+  .dl--ok li::before{background:#12a05f}
+  .dl--no li::before{background:#e5484d}
+
+  /* checklist */
+  .check-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+  .check-head b{font-size:14px}
+  .check-head span{font-size:13px;color:rgba(255,255,255,.8);font-weight:600}
+  .pbar{height:5px;border-radius:6px;background:rgba(255,255,255,.28);overflow:hidden;margin-bottom:14px}
+  .pbar i{display:block;height:100%;width:0;background:var(--lime);border-radius:6px;transition:width .35s ease}
+  .steps{display:grid;gap:8px}
+  .step{display:flex;gap:12px;align-items:flex-start;padding:15px;border-radius:18px;background:#fff;cursor:pointer;color:var(--ink);--muted:#5a6472;transition:background .2s ease}
+  .step input{position:absolute;opacity:0;width:0;height:0}
+  .box{flex:none;width:24px;height:24px;border-radius:8px;border:1.8px solid rgba(13,25,43,.28);display:grid;place-items:center;margin-top:1px;transition:background .2s ease,border-color .2s ease}
+  .box svg{width:14px;height:14px;opacity:0;transform:scale(.6);transition:opacity .18s ease,transform .18s ease;color:#fff}
+  .step input:checked+.box{background:var(--blue);border-color:var(--blue)}
+  .step input:checked+.box svg{opacity:1;transform:none}
+  .step input:focus-visible+.box{outline:2.5px solid #fff;outline-offset:3px}
+  .step-body h4{font-size:15.5px;margin-bottom:3px;letter-spacing:-.012em;transition:opacity .2s;color:var(--ink)}
+  .step-body p{font-size:13.5px;color:var(--muted);line-height:1.45}
+  .step input:checked~.step-body h4{text-decoration:line-through;text-decoration-thickness:1.5px;text-decoration-color:rgba(13,25,43,.35);opacity:.65}
+  .step input:checked~.step-body p{opacity:.7}
+  .reset{margin-top:12px;background:none;border:0;padding:6px 2px;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.68);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+
+  
+  /* numbers without cards */
+  .nums{display:flex;flex-direction:column;gap:18px;max-width:640px;margin-inline:auto}
+  .num b{display:block;font-family:var(--font-head);font-size:clamp(42px,11vw,64px);font-weight:700;letter-spacing:-.04em;line-height:.88;margin-bottom:10px}
+  .num span{font-size:13.5px;line-height:1.4;color:rgba(12,19,29,.72);display:block}
+  .num-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px 16px;margin-top:18px}
+  .num-pair--hero{margin-top:4px}.num-pair--hero .num b{font-size:clamp(72px,13vw,132px);line-height:.86}
+  .num-solo{display:grid;gap:8px;max-width:640px;margin:0 auto 22px}.num-solo b{display:block;font-family:var(--font-head);font-weight:700;font-size:clamp(72px,13vw,132px);line-height:.86;letter-spacing:-.04em}.num-solo span{font-size:13.5px;line-height:1.4;color:rgba(12,19,29,.72)}
+  .num-hero span{font-size:14.5px;line-height:1.45;color:rgba(12,19,29,.72);max-width:32ch}
+  .num-pair{margin-top:18px}
+
+  /* contacts */
+  .tel{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;text-decoration:none;padding:7px 0;color:var(--ink)}
+  .sig{background:var(--grey);border:1px solid rgba(13,25,43,.08);border-radius:16px;padding:14px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.2px;line-height:1.65;white-space:pre-wrap;color:var(--ink);overflow-x:auto}
+
+  /* security block */
+  .acc-buttons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:720px;margin-inline:auto}
+  .acc-btn{position:relative;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;text-align:left;aspect-ratio:4/3;padding:16px;overflow:hidden;border:0;border-radius:20px;background:var(--graphite-2);color:#fff;cursor:pointer;transition:transform .18s ease,background .18s ease}
+  .acc-btn:hover{background:#333}
+  .acc-btn:active{transform:scale(.985)}
+  .acc-btn__t{position:relative;z-index:2;font-family:var(--font-head);font-weight:700;font-size:clamp(15px,4vw,20px);line-height:1.16;letter-spacing:-.02em;overflow-wrap:normal;max-width:88%}
+  .acc-btn__s{position:relative;z-index:2;margin-top:7px;font-size:12px;line-height:1.36;color:rgba(255,255,255,.62);max-width:58%}
+  .acc-btn__art{position:absolute;z-index:0;right:14px;bottom:12px;width:28px;height:28px;color:var(--lime);pointer-events:none}
+  .acc-btn__art svg{display:block;width:100%;height:100%;stroke-width:1.7}.acc-btn__plus{position:absolute;left:16px;bottom:14px;z-index:2;width:30px;height:30px;border-radius:999px;background:#fff;color:var(--ink);display:grid;place-items:center;pointer-events:none}.acc-btn__plus svg{width:16px;height:16px;stroke-width:2.6}
+  .modal__panel--acc{width:min(720px,100%);display:flex;flex-direction:column;overflow:hidden;padding:0}
+.modal__panel--acc .modal__head{flex:none;position:relative;z-index:2;padding:clamp(22px,4vw,30px) clamp(22px,4vw,30px) clamp(14px,2.6vw,18px);background:#fff;border-bottom:1px solid rgba(13,25,43,.1);border-radius:30px 30px 0 0}
+.modal__panel--acc .modal__head h3{padding-right:68px}
+.modal__panel--acc .modal__head .modal__sub{margin-top:14px}
+.modal__panel--acc .modal__close{z-index:3}
+.modal__panel--acc .panel>.sub-p{display:none}
+  .modal__body .bento{grid-template-columns:1fr}
+  .modal__body .bento>*{grid-column:1/-1}
+  .modal__body .card{background:#f6f7f9}
+  .modal__body .card h3{margin-bottom:10px}
+  .modal__body .row{background:#f6f7f9}
+  .modal__body .copy{background:#fff}
+  .modal__panel--acc .modal__body{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;margin-top:0;padding:clamp(16px,3vw,22px) clamp(22px,4vw,30px) clamp(22px,4vw,30px)}
+  .isb{margin-top:clamp(28px,4vw,44px)}
+  .isb h3{font-size:clamp(20px,4.4vw,26px);letter-spacing:-.02em;margin-bottom:14px}
+  .isb-note{margin-top:10px;font-size:13px;color:rgba(255,255,255,.55)}
+  .isb .two{margin-bottom:12px}
+  .isb .rule-card{background:var(--graphite-2);color:#fff;border-radius:18px;padding:16px}
+  .isb .rule-card h3{font-size:14.5px;margin-bottom:8px}
+  .isb .rule-card h3 .dot{width:8px;height:8px}
+  .isb .dl{margin-top:4px}
+  .isb .dl li{color:rgba(255,255,255,.78);border-top-color:rgba(255,255,255,.12)}
+  .isb .acc{margin-top:12px}
+  .isb .acc details{background:var(--graphite-2);border-radius:16px}
+  .isb .acc summary{color:#fff;padding:14px 16px;font-size:15px}
+  .isb .acc .acc-body{padding:0 16px 16px 46px;color:rgba(255,255,255,.7);font-size:13.5px}
+  .isb .acc summary .plus{background:rgba(255,255,255,.1);color:#fff}
+  .isb .acc summary .idx{color:rgba(255,255,255,.5)}
+  .isb .acc details[open] summary .plus{background:var(--blue)}
+
+  .acc{display:grid;gap:8px}
+  .acc details{background:#fff;border-radius:16px;overflow:hidden;color:var(--ink)}
+  .acc summary{list-style:none;display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;font-size:15px;font-weight:650;letter-spacing:-.01em}
+  .acc summary::-webkit-details-marker{display:none}
+  .acc summary .idx{font-size:11px;font-weight:800;color:var(--ink-2);letter-spacing:.08em;flex:none;width:20px}
+  .acc summary .plus{margin-left:auto;width:26px;height:26px;border-radius:999px;background:var(--grey);display:grid;place-items:center;flex:none;transition:transform .25s ease,background .25s ease,color .25s ease}
+  .acc summary .plus svg{width:13px;height:13px}
+  .acc details[open] summary .plus{transform:rotate(45deg);background:var(--blue);color:#fff}
+  .acc .acc-body{padding:0 16px 16px 46px;font-size:13.5px;line-height:1.5;color:var(--ink-2)}
+
+  .desk-num{font-family:var(--font-head);font-size:clamp(34px,7vw,44px);font-weight:700;line-height:1;letter-spacing:-.03em;margin-top:10px}
+  .desk-cap{font-size:13px;color:var(--muted);margin-top:2px}
+  .bento>.card.w6{grid-column:1/-1}
+  .bento>.corp-intro{grid-column:1/-1}
+  #corp .bento{gap:14px}
+  .corp-intro{text-align:center;padding:clamp(34px,6vw,56px) 0 clamp(30px,5vw,46px)}
+  .corp-intro .corp-ico{display:inline-block;width:clamp(130px,32vw,190px);margin-bottom:18px}
+  .corp-intro .corp-ico svg{width:100%;height:auto;display:block}
+  .corp-intro .corp-name{margin-bottom:6px;font-family:var(--font-head);font-weight:700;font-size:clamp(26px,6vw,34px);letter-spacing:-.02em;line-height:1.02;color:var(--ink)}
+  .corp-ico-img{width:44px;height:44px;margin-bottom:14px;display:block}
+  .card-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .card-head .corp-ico-img{margin-bottom:0;width:40px;height:40px;flex:none}
+  .card-head h3{margin-bottom:0;font-size:clamp(20px,4.4vw,26px);letter-spacing:-.02em;line-height:1.02}
+  .tear{--lg:14px;position:relative;height:calc(var(--lg)*2);margin:-12px -14px 0}
+  .tear .cut{position:absolute;top:calc(var(--lg) - 25px);height:50px;display:block}
+  .tear .cut--l{left:0;width:26px}
+  .tear .cut--r{right:0;width:25px}
+  .tear-line{position:absolute;left:26px;right:25px;top:var(--lg);border-top:2px dashed #fff}
+  .card p.corp-lede{max-width:52ch;margin-inline:auto;font-size:clamp(19px,3.6vw,26px);line-height:1.5;letter-spacing:-.015em;font-weight:400;color:var(--fg)}
+  .corp-lede + .corp-lede{margin-top:14px}
+  .sub-h{font-size:clamp(18px,3.6vw,22px);letter-spacing:-.015em}
+  .sub-p{margin-top:8px;margin-bottom:16px;font-size:14px;line-height:1.45;color:var(--muted);max-width:52ch}
+
+  /* merged contacts */
+  .sub-people{margin-top:16px;display:grid;gap:0}
+  .sub-people .p-row{margin-top:0;padding-block:16px;border-top:1px solid rgba(13,25,43,.1)}
+  .sub-people .p-row:last-child{padding-bottom:0}
+  .sub-people .p-row .av{margin-top:0}
+  .sub-people .tel{padding-top:10px}
+
+  /* salary */
+  .pay-sub{margin-top:clamp(34px,5vw,52px);margin-bottom:14px;font-family:var(--font-head);font-weight:700;font-size:clamp(20px,4.4vw,26px);letter-spacing:-.02em;line-height:1.02;color:var(--ink)}
+  .pay{display:flex;flex-wrap:wrap;gap:10px;align-items:stretch}
+  .pay-card{background:#fff;border-radius:22px;padding:clamp(16px,4vw,26px) clamp(18px,5vw,28px);text-align:left;flex:0 0 auto}
+  .pay-card b{display:block;font-family:var(--font-head);font-size:clamp(30px,8.4vw,54px);line-height:.94;letter-spacing:-.03em;color:var(--blue)}
+
+  /* portal */
+  .portal-simple{text-align:center}.portal-art{display:block;width:clamp(120px,26vw,180px);height:auto;margin:0 auto clamp(2px,1vw,8px)}
+  .portal-simple h2{max-width:none;margin-inline:auto;text-align:center}
+  .portal-sub{margin:16px auto 0;max-width:42ch;font-size:clamp(15px,1.7vw,17px);line-height:1.5;color:var(--muted)}
+  .portal-btns{display:grid;gap:10px;margin:clamp(22px,4vw,30px) auto 0;max-width:440px}
+  .btn-solid,.btn-soft{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:16px 26px;border-radius:999px;font-size:15px;font-weight:800;letter-spacing:-.01em;text-decoration:none;transition:filter .18s ease}
+  .btn-solid{background:var(--blue);color:#fff}
+  .btn-soft{background:rgba(12,115,254,.07);color:var(--blue)}
+  .btn-solid:active,.btn-soft:active{filter:brightness(.95)}
+
+  /* thanks + modal */
+  #thanks{margin-top:clamp(56px,9vw,140px)}
+  .thanks-cat{display:block;width:clamp(155px,34vw,245px);height:auto;margin:0 auto clamp(2px,1vw,8px)}
+  .thanks{text-align:center}
+  .thanks-title{font-size:clamp(32px,8vw,60px);margin-inline:auto;max-width:none}
+  .thanks-sub{margin-top:12px;font-size:clamp(15px,1.8vw,18px);color:var(--muted)}
+  .ask-bar{margin-top:clamp(24px,4vw,36px);display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;text-align:left;background:#fff;border-radius:22px;padding:18px 20px}
+  .ask-bar p{font-size:14.5px;line-height:1.45;max-width:46ch;color:var(--ink)}
+  .ask-main{display:flex;align-items:center;gap:12px;flex:1 1 260px;min-width:0}
+  .ask-ico{flex:none;display:grid;place-items:center;width:30px;height:30px;color:var(--ink)}
+  .ask-ico svg{width:30px;height:auto;display:block}
+  .modal__emoji{margin-bottom:14px;font-size:clamp(60px,11vw,92px);line-height:1;letter-spacing:.02em}
+  .ask-link{border:0;background:none;padding:6px 0;color:var(--blue);font-size:14.5px;font-weight:800;cursor:pointer;flex:none}
+
+  .modal{position:fixed;inset:0;z-index:150;display:grid;place-items:center;padding:18px;padding-top:calc(18px + env(safe-area-inset-top));padding-bottom:calc(18px + env(safe-area-inset-bottom))}
+  .modal[hidden]{display:none}
+  .modal__backdrop{position:absolute;inset:0;background:rgba(12,19,29,.55);animation:fadeIn .2s ease}
+  .modal__panel{position:relative;width:min(520px,100%);max-height:calc(100vh - 36px);max-height:calc(100svh - 36px - env(safe-area-inset-top) - env(safe-area-inset-bottom));overflow-y:auto;background:#fff;border-radius:30px;padding:clamp(22px,4vw,30px);color:var(--ink);--fg:var(--ink);--muted:var(--ink-2);animation:pop .24s cubic-bezier(.2,.8,.3,1)}
+  .modal__panel.modal__panel--acc{width:min(720px,100%);padding:0;overflow:hidden}
+.modal__panel h3{font-size:clamp(22px,4.4vw,28px);letter-spacing:-.02em;padding-right:48px}
+  .modal__sub{margin-top:8px;font-size:14px;line-height:1.45;color:var(--muted)}
+  .modal__close{position:absolute;top:12px;right:12px;width:46px;height:46px;border-radius:999px;border:0;background:var(--grey);display:grid;place-items:center;cursor:pointer}
+  .modal__close svg{width:18px;height:18px}
+  .modal__list{margin-top:20px;display:grid;gap:16px}
+  .modal__list .p-row{margin-top:0;padding-top:16px;border-top:1px solid rgba(13,25,43,.1)}
+  .modal__list .copy{margin-top:0;justify-self:start}.hr-card{display:flex;flex-direction:column;align-items:center;text-align:center;margin-top:6px}.hr-card__ava{width:96px;height:96px;border-radius:999px;background:var(--sky);color:var(--ink);display:grid;place-items:center;font-family:var(--font-head);font-weight:800;font-size:30px;letter-spacing:-.02em;margin-bottom:14px}.hr-card__img{width:96px;height:96px;border-radius:999px;object-fit:cover;display:block;margin:0 0 14px;background-size:cover;background-position:center}.hr-card__name{font-family:var(--font-head);font-weight:800;font-size:21px;letter-spacing:-.02em;margin:0}.hr-card__role{font-size:13.5px;line-height:1.45;color:var(--muted);margin:6px 0 0;max-width:300px}.hr-card__meta{margin-top:16px;display:grid;gap:6px;font-size:14px;justify-items:center}.hr-card__meta a{color:var(--ink);font-weight:650;text-decoration:none}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  @keyframes pop{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+
+  /* footer */
+  .foot{width:min(1360px,calc(100% - 28px));margin:12px auto calc(12px + env(safe-area-inset-bottom));border-radius:20px;background:var(--graphite);color:#fff;padding-block:clamp(34px,6vw,64px) clamp(24px,4vw,40px)}
+  .foot-cta{padding-bottom:clamp(24px,4vw,38px);margin-bottom:clamp(24px,4vw,38px);border-bottom:1px solid rgba(255,255,255,.14)}
+  .foot-cta h2{color:#fff;font-size:clamp(28px,6vw,48px)}
+  .foot-cta p{margin-top:12px;max-width:58ch;font-size:clamp(14px,1.6vw,16px);line-height:1.5;color:rgba(255,255,255,.7)}
+  .foot-cta-btns{margin-top:clamp(20px,3.5vw,28px);display:flex;flex-direction:column;align-items:stretch;gap:10px}
+  .foot-cta-btns .foot-cta-btns .btn-ghost{flex:0 0 auto;width:100%;padding:15px 20px;font-size:15px;white-space:nowrap;text-align:center}
+  @media (min-width:720px){.foot-cta-btns{flex-direction:row;flex-wrap:nowrap;align-items:center;justify-content:flex-start}.foot-cta-btns .foot-cta-btns .btn-ghost{flex:0 0 200px;width:200px;padding:15px 0}}
+  .btn-ghost{display:inline-flex;align-items:center;justify-content:center;padding:15px 28px;border-radius:999px;font-size:15px;font-weight:800;letter-spacing:-.01em;text-decoration:none;transition:filter .18s ease}
+  
+  .btn-ghost{background:rgba(255,255,255,.16);color:#fff}
+  .btn-ghost:active{filter:brightness(.95)}
+  .foot-label{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px}
+  .foot-links{display:grid;gap:8px}
+  .foot-links a{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border-radius:14px;padding:14px 16px;text-decoration:none;font-size:14.5px;font-weight:650}
+  .foot-links a svg{width:15px;height:15px;margin-left:auto;opacity:.45;flex:none}
+  .soc-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .soc{width:46px;height:46px;border-radius:14px;background:#fff;color:var(--ink);display:grid;place-items:center;text-decoration:none;font-size:12.5px;font-weight:800;letter-spacing:-.03em;line-height:1}
+  .soc svg{width:20px;height:20px}
+  .foot-bottom{margin-top:26px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14);display:flex;flex-wrap:wrap;gap:8px 18px;font-size:12.5px;color:rgba(255,255,255,.52)}
+
+  /* toast */
+  .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom));transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:12px 20px;border-radius:999px;font-size:13.5px;font-weight:650;opacity:0;pointer-events:none;transition:opacity .22s ease,transform .22s ease;z-index:120}
+  .toast[data-show="true"]{opacity:1;transform:translate(-50%,0)}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.2,.7,.3,1),transform .6s cubic-bezier(.2,.7,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1;transform:none;transition:none}
+    .panel{animation:none}
+    *{transition-duration:.01ms !important}
+  }
+
+  @media (min-width:560px){
+    .rail>*{flex-basis:56%}
+    .foot-links{grid-template-columns:1fr 1fr}
+  }
+
+  @media (min-width:760px){
+    body{font-size:18px}
+    .container,.top-in{width:min(1240px,calc(100% - 88px))}
+    .top-in{height:66px}
+    .section{width:min(1360px,calc(100% - 48px));margin:24px auto;border-radius:36px}
+    .foot{width:min(1360px,calc(100% - 48px));margin:24px auto;border-radius:36px}
+    .bento{grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+    .acc-buttons{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:1040px}
+    .acc-btn{padding:20px;border-radius:24px}
+    .acc-btn__t{max-width:100%}
+    .acc-btn__s{max-width:82%}
+    .acc-btn__art{width:42px;height:42px;right:20px;bottom:18px}
+    .modal__close{top:16px;right:16px;width:38px;height:38px}
+    .modal__close svg{width:15px;height:15px}
+    #corp .bento{gap:18px}
+    .bento>*{grid-column:span 2}
+    .bento>.w2{grid-column:span 2}
+    .bento>.w3{grid-column:span 3}
+    .bento>.w4{grid-column:span 4}
+    .bento>.w6{grid-column:span 6}
+  .card{padding:22px;border-radius:24px}
+  @media (min-width:760px){#p-corp-1 .tear{--lg:22px;margin:-12px -22px 0}}
+    .card h3{font-size:19px}
+    .two{grid-template-columns:1fr 1fr}
+    .portal-btns{grid-template-columns:1fr 1fr;max-width:560px}
+    .sec-head{max-width:70ch}
+    .rail{display:grid;gap:12px;overflow:visible;padding:0}
+    .rail>*{flex:none;max-width:none;height:100%}
+    .rail-values{grid-template-columns:repeat(6,1fr);grid-auto-rows:1fr}
+    .rail-values>*{grid-column:span 2}
+    .rail-values>.v-lg{grid-column:span 3}
+    .rail-perks{grid-template-columns:repeat(6,1fr)}
+    .rail-perks>*{grid-column:span 3}
+    .rail-perks>.p-sm{grid-column:span 2}
+    .rail-perks>.p-wide{grid-column:span 4}
+  .rail-perks>.card{display:flex;flex-direction:column;justify-content:flex-start}
+    .perk{padding:14px 14px 22px}
+    .perk__media{margin-bottom:26px;border-radius:20px 20px 20px 0}
+    .perk__tag{--cut:10px;font-size:15px;padding:6px 12px 5px 8px;border-radius:0 10px 0 0}
+    .perk h3{margin-bottom:8px}
+    .perk p{font-size:14.5px;line-height:1.55}
+    .quote{max-width:34ch}
+    .foot-links{grid-template-columns:1fr 1fr}
+    .org{max-width:820px}
+  }
+
+  @media (min-width:1000px){
+    .nav{display:flex}
+    .menu-btn{display:none}
+    .hero h1{max-width:14ch}
+    .foot-links{grid-template-columns:repeat(4,1fr)}
+  }
+  @media (max-width:759px){
+    .section{padding-block:clamp(28px,7vw,44px)}
+    .card{padding:14px}
+    .row{padding:12px 14px}
+  }
+</style>
+</head>
+<body>
+<div class="vh" aria-hidden="true"></div>
+<a class="skip" href="#main">К содержанию</a>
+<div class="scrollbar" id="scrollbar" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<symbol id="i-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
+<path d="M12 2.5l2.3 7.2L21.5 12l-7.2 2.3L12 21.5l-2.3-7.2L2.5 12l7.2-2.3z"/>
+</symbol>
+<symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+<path d="M4 7h16M4 12h16M4 17h16"/>
+</symbol>
+<symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+<path d="M6 6l12 12M18 6L6 18"/>
+</symbol>
+<symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round">
+<path d="M12 5v14M5 12h14"/>
+</symbol>
+<symbol id="i-warn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2 2.6 19.4a1.2 1.2 0 0 0 1 1.8h16.8a1.2 1.2 0 0 0 1-1.8L12 3.2Z"/><path d="M12 9.4v4.4"/><path d="M12.01 17.3h-.01"/></symbol>
+<symbol id="i-cut-l" viewBox="0 0 21 40">
+<path d="M0 40L1.72731e-06 0C1.27259e-06 10.5302 8.36111 18.4057 18.6667 18.4057H20.0025V21.5943H18.6667C8.36111 21.5943 4.5472e-07 29.4698 0 40Z" fill="white"/>
+</symbol>
+<symbol id="i-cut-r" viewBox="0 0 20 40">
+<path fill="#fff" d="M20,40V0c0,10.53-8.36,18.41-18.67,18.41H0v3.19h1.34c10.31,0,18.67,7.88,18.67,18.41Z"/>
+</symbol>
+<symbol id="i-t" viewBox="0 0 170.08 170.08">
+<rect fill="#f6f7f9" x=".17" y="-.13" width="170.08" height="170.08" rx="52.37" ry="52.37"/>
+<g>
+<polygon fill="#183a68" points="107.28 52.84 52.21 52.84 52.21 67.77 71.24 67.77 71.24 116.98 88.25 116.98 88.25 67.77 107.28 67.77 107.28 52.84"/>
+<circle fill="#e40428" cx="107.28" cy="106.04" r="10.93"/>
+</g>
+</symbol>
+<symbol id="i-person" viewBox="0 0 45.35 45.35">
+<g>
+<path fill="#0c73fe" d="M14.17,1.91h17.37c6.48,0,11.75,5.26,11.75,11.75v17.96c0,6.48-5.26,11.75-11.75,11.75H14.17c-6.48,0-11.75-5.26-11.75-11.75V13.66C2.42,7.17,7.69,1.91,14.17,1.91Z"/>
+<path fill="#fff" d="M31.54,3.41c5.66,0,10.25,4.59,10.25,10.25v17.95c0,5.66-4.59,10.25-10.25,10.25H14.17c-5.66,0-10.25-4.59-10.25-10.25V13.66c0-5.66,4.59-10.25,10.25-10.25h17.37M31.54.41H14.17c-7.31,0-13.25,5.94-13.25,13.25v17.95c0,7.31,5.94,13.25,13.25,13.25h17.37c7.31,0,13.25-5.94,13.25-13.25V13.66c0-7.31-5.94-13.25-13.25-13.25h0Z"/>
+</g>
+<g>
+<path fill="#fff" d="M18.13,14.41c-.12.46-.12,1.03-.12,2.16v2.43c0,1.13,0,1.69.12,2.16.34,1.26,1.32,2.24,2.58,2.58.46.12,1.03.12,2.16.12s1.69,0,2.16-.12c1.26-.34,2.24-1.32,2.58-2.58.12-.46.12-1.03.12-2.16v-2.43c0-1.13,0-1.69-.12-2.16-.34-1.26-1.32-2.24-2.58-2.58-.46-.12-1.03-.12-2.16-.12s-1.69,0-2.16.12c-1.26.34-2.24,1.32-2.58,2.58Z"/>
+<path fill="#fff" d="M21.64,26.28c-4.02,0-7.28,3.26-7.28,7.28h17c0-4.02-3.26-7.28-7.28-7.28h-2.43Z"/>
+</g>
+</symbol>
+<symbol id="i-bed" viewBox="0 0 45.35 45.35">
+<g>
+<rect fill="#fa742d" x="2.24" y="1.95" width="40.87" height="41.45" rx="11.75" ry="11.75"/>
+<path fill="#fff" d="M31.36,3.45c5.66,0,10.25,4.59,10.25,10.25v17.95c0,5.66-4.59,10.25-10.25,10.25H13.99c-5.66,0-10.25-4.59-10.25-10.25V13.7c0-5.66,4.59-10.25,10.25-10.25h17.37M31.36.45H13.99c-7.31,0-13.25,5.94-13.25,13.25v17.95c0,7.31,5.94,13.25,13.25,13.25h17.37c7.31,0,13.25-5.94,13.25-13.25V13.7c0-7.31-5.94-13.25-13.25-13.25h0Z"/>
+</g>
+<g>
+<path fill="#fff" d="M16.1,20.04v-1.3c0-.73.6-1.33,1.33-1.33h2.62c.73,0,1.33.59,1.33,1.33v1.3s2.59,0,2.59,0v-1.3c0-.73.6-1.33,1.33-1.33h2.63c.73,0,1.33.6,1.33,1.33v1.3s3.25,0,3.25,0v-6.53s-19.66,0-19.66,0v6.53s3.25,0,3.25,0Z"/>
+<path fill="#fff" d="M34.47,26.61c0-1.05-.41-2.03-1.15-2.77-.74-.74-1.73-1.15-2.77-1.15h-15.75c-1.05,0-2.03.41-2.77,1.15s-1.15,1.73-1.15,2.77v5.23s2.6,0,2.6,0l1.31-2.63h15.77s1.31,2.62,1.31,2.62h2.6s0-5.24,0-5.24Z"/>
+</g>
+</symbol>
+<symbol id="i-star" viewBox="0 0 45.35 45.35">
+<g>
+<rect fill="#3bbf56" x="2.24" y="1.95" width="40.87" height="41.45" rx="11.75" ry="11.75"/>
+<path fill="#fff" d="M31.36,3.45c5.66,0,10.25,4.59,10.25,10.25v17.95c0,5.66-4.59,10.25-10.25,10.25H13.99c-5.66,0-10.25-4.59-10.25-10.25V13.7c0-5.66,4.59-10.25,10.25-10.25h17.37M31.36.45H13.99c-7.31,0-13.25,5.94-13.25,13.25v17.95c0,7.31,5.94,13.25,13.25,13.25h17.37c7.31,0,13.25-5.94,13.25-13.25V13.7c0-7.31-5.94-13.25-13.25-13.25h0Z"/>
+</g>
+<path fill="#fff" d="M22.14,11.89l-2.91,7.01-7.56.61-.33,1.01,5.76,4.94-1.76,7.38.86.63,6.48-3.96,6.48,3.96.86-.63-1.76-7.38,5.76-4.94-.33-1.01-7.56-.61-2.91-7.01h-1.06Z"/>
+</symbol>
+<symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+<rect x="3" y="5.5" width="18" height="13" rx="2.5"/>
+<path d="M3.5 7l8.5 6 8.5-6"/>
+</symbol>
+<symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+<path d="M6.5 3.5h3L11 7.6l-2 1.4a12 12 0 006 6l1.4-2 4.1 1.5v3a2 2 0 01-2.2 2A16.5 16.5 0 014.5 5.7a2 2 0 012-2.2z"/>
+</symbol>
+<symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+<circle cx="8" cy="15" r="3.6"/>
+<path d="M10.6 12.4L19.5 3.5M16.5 3.5h3v3"/>
+</symbol>
+<symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+<path d="M3 6.5h6l2 2h10v10.5H3z"/>
+</symbol>
+<symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="9" cy="8" r="3.2"/>
+<path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M17.2 5.4a3 3 0 010 5.6M18.5 14.2c1.7.9 2.6 2.8 2.6 5.8"/>
+</symbol>
+<symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="12" r="9"/>
+<path d="M12 7.4V12l3.3 2"/>
+</symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+<rect x="3.2" y="5" width="17.6" height="16" rx="2.6"/>
+<path d="M3.2 10h17.6M8 2.8V6M16 2.8V6"/>
+</symbol>
+<symbol id="i-cup" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+<path d="M4.5 8h11v6a4 4 0 01-4 4h-3a4 4 0 01-4-4z"/>
+<path d="M15.5 9.4h1.8a2.6 2.6 0 010 5.2h-1.8M4 21h12"/>
+</symbol>
+<symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+<path d="M12 2.8l7.2 3v5c0 4.7-3.1 8-7.2 9.4-4.1-1.4-7.2-4.7-7.2-9.4v-5z"/>
+<path d="M9 12l2.2 2.2L15.4 10"/>
+</symbol>
+<symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+<path d="M4 21V6l8-3.2V21M12 21V9.4L20 12v9M2.5 21h19"/>
+<path d="M7 8.4h2M7 12h2M7 15.6h2M15 13.4h2M15 17h2"/>
+</symbol>
+<symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+<path d="M4 4.5h16v11H9.5L4 20z"/>
+</symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+<path d="M4 12h14M12.5 5.5L19 12l-6.5 6.5"/>
+</symbol>
+<symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+<path d="M4.5 12.5l4.6 4.6L19.5 6.5"/>
+</symbol>
+<symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
+<rect x="8.5" y="8.5" width="11.5" height="11.5" rx="2.4"/>
+<path d="M5 15.5V5.5h10"/>
+</symbol>
+<symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+<path d="M6 2.8h7.5L18 7.4v13.8H6z"/>
+<path d="M13.2 3v4.6H18M9 12.5h6M9 16.4h4"/>
+</symbol>
+<symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+<rect x="3" y="4.2" width="18" height="12.4" rx="2.2"/>
+<path d="M9 20.5h6M12 16.8v3.6"/>
+</symbol>
+<symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+<path d="M12 21.2s7-6.4 7-11.1A7 7 0 105 10.1c0 4.7 7 11.1 7 11.1z"/>
+<circle cx="12" cy="10" r="2.6"/>
+</symbol>
+<symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+<path d="M12 2.8l2 5.9 6 2.1-6 2.1-2 5.9-2-5.9-6-2.1 6-2.1z"/>
+</symbol>
+<symbol id="i-ball" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+<circle cx="12" cy="12" r="9"/>
+<path d="M12 3.2v4.4M12 16.4v4.4M3.2 12h4.4M16.4 12h4.4M6.6 6.6l3 3M14.4 14.4l3 3M17.4 6.6l-3 3M9.6 14.4l-3 3"/>
+</symbol>
+<symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+<rect x="4" y="10" width="16" height="11" rx="2.6"/>
+<path d="M8 10V7a4 4 0 018 0v3"/>
+</symbol>
+<symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+<circle cx="12" cy="12" r="9"/>
+<path d="M3.2 12h17.6M12 3a15 15 0 010 18 15 15 0 010-18z"/>
+</symbol>
+<symbol id="i-person" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="12" cy="8.5" r="3.8"/>
+<path d="M4.5 20.5c0-4.1 3.4-7 7.5-7s7.5 2.9 7.5 7"/>
+</symbol>
+<symbol id="i-plane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+<path d="M21.5 3.2L2.8 10.4l7 2.6 2.6 7 3.3-5.9 5.8-10.9z"/>
+<path d="M9.8 13l4.4-4.4"/>
+</symbol>
+<symbol id="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round">
+<circle cx="12" cy="12" r="9"/>
+<path d="M10 8.6l6 3.4-6 3.4z"/>
+</symbol>
+<symbol id="i-np" viewBox="0 0 170.08 117.2"><polygon fill="#e73a4c" points="113.88 12.99 116.11 12.99 114.99 5.55 113.88 12.99"/><path fill="#e73a4c" d="M97.03,4.88c-.74,0-1.2.4-1.2,1.45v7.95c0,1.05.46,1.45,1.2,1.45s1.2-.4,1.2-1.45v-7.95c0-1.05-.46-1.45-1.2-1.45Z"/><polygon fill="#e73a4c" points="67.83 12.99 70.06 12.99 68.94 5.55 67.83 12.99"/><path fill="#e73a4c" d="M152.77,14.17v-2.21c0-1.05-.4-1.39-1.14-1.39h-1.09v4.98h1.09c.74,0,1.14-.34,1.14-1.39Z"/><path fill="#e73a4c" d="M160.68,31.83v-2.21c0-1.05-.4-1.39-1.13-1.39h-1.09v4.98h1.09c.73,0,1.13-.34,1.13-1.39Z"/><path fill="#e73a4c" d="M135.13,14.17v-2.21c0-1.05-.4-1.39-1.14-1.39h-1.09v4.98h1.09c.74,0,1.14-.34,1.14-1.39Z"/><path fill="#e73a4c" d="M168.61,0H54.75c-.57,0-1.09.33-1.33.85L.14,115.1c-.56,1.19.6,2.45,1.84,2l167.13-60.83c.58-.21.97-.76.97-1.38V1.47c0-.81-.66-1.47-1.47-1.47ZM156.4,2.94h2.31v14.72h-2.31V2.94ZM156.14,20.6h2.31v5.53h1.09c2.31,0,3.45,1.28,3.45,3.64v1.91c0,2.35-1.14,3.64-3.45,3.64h-3.41v-14.72ZM148.22,2.94h2.31v5.53h1.09c2.31,0,3.45,1.28,3.45,3.64v1.91c0,2.36-1.14,3.64-3.45,3.64h-3.41V2.94ZM139.09,2.94h2.31v6.31h2.63V2.94h2.36v14.72h-2.36v-6.31h-2.63v6.31h-2.31V2.94ZM130.59,2.94h2.31v5.53h1.09c2.31,0,3.45,1.28,3.45,3.64v1.91c0,2.36-1.13,3.64-3.45,3.64h-3.41V2.94ZM136.2,26.8v2.1h-3.18v4.31h4v2.1h-6.31v-14.72h6.31v2.1h-4v4.1h3.18ZM120.36,15.58c1.05,0,1.38-.15,1.43-1.52l.38-11.12h6.54v14.72h-2.36V5.04h-2.02l-.25,8.89c-.08,2.69-1.05,3.74-3.36,3.74h-.35v-2.1ZM128.98,24.13v7.65c0,2.36-1.24,3.7-3.51,3.7s-3.51-1.34-3.51-3.7v-7.65c0-2.36,1.24-3.7,3.51-3.7s3.51,1.34,3.51,3.7ZM63.55,17.66h-2.35v-6.31h-2.63v6.31h-2.31V2.94h2.31v6.31h2.63V2.94h2.35v14.72ZM70.77,17.66l-.4-2.67h-2.84l-.4,2.67h-2.12l2.36-14.72h3.38l2.36,14.72h-2.33ZM82.88,19.64h-2.25v-1.98h-6.05V2.94h2.31v12.61h2.63V2.94h2.35v12.66h1.01v4.04ZM91.81,17.66h-2.08V7.29l-.94,3.61-1.94,6.75h-2.38V2.94h2.06v9.31l.84-3.24,1.89-6.08h2.55v14.72ZM100.54,14.13c0,2.35-1.24,3.7-3.51,3.7s-3.51-1.35-3.51-3.7v-7.65c0-2.35,1.24-3.7,3.51-3.7s3.51,1.34,3.51,3.7v7.65ZM102.27,2.94h2.31v6.31h2.63V2.94h2.36v14.72h-2.36v-6.31h-2.63v6.31h-2.31V2.94ZM111.85,35.32h-2.36v-12.61h-2.63v12.61h-2.31v-14.72h7.3v14.72ZM113.19,17.66h-2.12l2.35-14.72h3.39l2.35,14.72h-2.34l-.4-2.67h-2.84l-.4,2.67ZM116.01,35.32h-2.31v-14.72h3.41c2.31,0,3.45,1.28,3.45,3.64v1.91c0,2.36-1.14,3.64-3.45,3.64h-1.09v5.53ZM123.08,43.81c0,2.36-1.13,3.64-3.45,3.64h-1.09v5.53h-2.31v-14.72h3.41c2.31,0,3.45,1.28,3.45,3.64v1.91ZM131.52,49.45c0,2.35-1.24,3.7-3.51,3.7s-3.51-1.35-3.51-3.7v-7.65c0-2.36,1.24-3.7,3.51-3.7s3.51,1.35,3.51,3.7v7.65ZM140.02,43.22h-2.19v-1.58c0-1.05-.46-1.45-1.2-1.45s-1.2.4-1.2,1.45v7.95c0,1.05.46,1.43,1.2,1.43s1.2-.38,1.2-1.43v-2.1h2.19v1.95c0,2.35-1.18,3.7-3.45,3.7s-3.45-1.35-3.45-3.7v-7.65c0-2.36,1.18-3.7,3.45-3.7s3.45,1.35,3.45,3.7v1.43ZM140.99,35.32h-2.31v-14.72h2.31v6.41l3.02-6.41h2.31l-3.21,6.56,3.21,8.16h-2.37l-2.25-5.87-.71,1.35v4.52ZM148.48,43.22h-2.19v-1.58c0-1.05-.46-1.45-1.2-1.45s-1.2.4-1.2,1.45v7.95c0,1.05.46,1.43,1.2,1.43s1.2-.38,1.2-1.43v-2.1h2.19v1.95c0,2.35-1.17,3.7-3.45,3.7s-3.45-1.35-3.45-3.7v-7.65c0-2.36,1.18-3.7,3.45-3.7s3.45,1.35,3.45,3.7v1.43ZM147.52,22.7v-2.1h7.15v2.1h-2.42v12.61h-2.31v-12.61h-2.42ZM157.46,52.98h-2.08v-10.37l-.95,3.62-1.93,6.75h-2.37v-14.72h2.06v9.31l.84-3.24,1.89-6.08h2.54v14.72ZM166.63,52.98h-2.08v-10.37l-.94,3.62-1.94,6.75h-2.37v-14.72h2.06v9.31l.84-3.24,1.89-6.08h2.54v14.72ZM166.63,35.32h-2.31v-14.71h2.31v14.71ZM166.88,5.04h-4v4.1h3.18v2.1h-3.18v4.31h4v2.1h-6.31V2.94h6.31v2.1Z"/><path fill="#e73a4c" d="M128.01,40.2c-.74,0-1.2.4-1.2,1.45v7.95c0,1.05.46,1.45,1.2,1.45s1.2-.4,1.2-1.45v-7.95c0-1.05-.46-1.45-1.2-1.45Z"/><path fill="#e73a4c" d="M118.24,26.3v-2.21c0-1.05-.4-1.39-1.14-1.39h-1.09v4.98h1.09c.74,0,1.14-.33,1.14-1.39Z"/><path fill="#e73a4c" d="M119.64,40.37h-1.09v4.98h1.09c.74,0,1.13-.34,1.13-1.38v-2.21c0-1.05-.4-1.39-1.13-1.39Z"/><path fill="#e73a4c" d="M125.47,22.54c-.74,0-1.2.4-1.2,1.45v7.95c0,1.05.46,1.45,1.2,1.45s1.2-.4,1.2-1.45v-7.95c0-1.05-.46-1.45-1.2-1.45Z"/></symbol>
+<symbol id="i-demo" viewBox="0 0 111.71 88.51">
+      <path fill="currentColor" fill-rule="evenodd" d="M105.14,1.29c-5.95-2.57-10.47-1.5-12.61,4.86l5.67,2.45c1.04-2.98,2.44-3.61,4.78-2.6,2.22.96,2.53,2.26,1.96,3.58-.6,1.38-1.82,2.09-4.63,2.59l-3.48.61-.72,1.66,5.14,2.22,2.42-.34c4.53-.74,6.27-2.06,7.44-4.76,1.52-3.5.37-7.53-5.97-10.27Z"/>
+      <polygon fill="currentColor" fill-rule="evenodd" points="92.74 21.62 98.19 23.98 100.36 18.98 94.91 16.62 92.74 21.62"/>
+      <path fill="currentColor" fill-rule="evenodd" d="M42.9,47.16c-1.13-11.16-8.5-17.42-16.66-16.6-8.16.82-14.13,8.41-13,19.58l.3,2.93c1.09,10.78,9.18,16.69,16.59,15.95,7.41-.75,14.16-8.15,13.06-18.93l-.3-2.93ZM34.86,49.12c-1.23.12-2.3-.52-2.52-2.73-.23-2.32-1.4-3.78-1.74-4.16h-.01c-.35-.41-1.31-1.51-3.3-1.31-2.22.22-3.07-.7-3.19-1.92-.12-1.23.52-2.29,2.74-2.52,3.18-.32,5.5.99,7.02,2.7,1.52,1.71,2.64,3.91,2.93,6.76.22,2.22-.7,3.06-1.92,3.18Z"/>
+      <path fill="currentColor" fill-rule="evenodd" d="M89.27,46.43c-2.24-22.16-15.22-31.13-29.97-29.65-6.84.69-12.85,3.5-17.11,8.53-5.18-4.08-11.64-5.64-18.48-4.96C8.97,21.84-1.95,33.21.29,55.37l.34,3.37c2,19.76,15.88,31.07,29.97,29.65,6.65-.67,12.69-4.11,17-9.63,5.33,4.56,11.94,6.72,18.59,6.06,14.09-1.42,25.42-15.25,23.42-35.02l-.34-3.37ZM43.44,74.37c-3.48,4.81-8.42,7.6-13.44,8.1-10.08,1.01-21.69-7.06-23.44-24.33l-.34-3.37c-1.02-10.05,1.02-16.84,4.21-21.14,3.15-4.25,7.92-6.77,13.88-7.37,5.72-.58,10.73.8,14.6,4.05.16.13.32.27.48.41,1.37,1.23,2.67,2.78,3.82,4.7,2.19,3.64,3.87,8.59,4.53,15.17l.34,3.37c.88,8.67-1.14,15.56-4.64,20.4ZM65.59,78.9c-5.02.5-10.42-1.25-14.8-5.27,1.97-4.02,3.19-8.73,3.42-13.98,3.19,3.18,7.37,4.71,11.37,4.31,7.41-.74,14.16-8.15,13.06-18.93l-.3-2.93c-1.13-11.16-8.5-17.42-16.66-16.6-5.39.54-9.83,4.05-11.89,9.59-.98-2.07-2.12-3.91-3.39-5.53,3.14-3.95,7.77-6.3,13.5-6.87,5.96-.6,11.15.92,15.08,4.46,3.98,3.58,7.34,9.82,8.36,19.87l.34,3.37c1.75,17.28-8.01,27.49-18.09,28.5ZM62.28,31.42c3.18-.32,5.5.99,7.02,2.7,1.52,1.71,2.64,3.91,2.93,6.76.22,2.22-.7,3.06-1.92,3.18-1.23.12-2.3-.52-2.52-2.73-.23-2.32-1.4-3.78-1.74-4.16h-.01c-.35-.41-1.31-1.51-3.3-1.31-2.22.22-3.07-.7-3.19-1.92-.12-1.23.52-2.29,2.74-2.52Z"/>
+  </symbol>
+<symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v11"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M4.5 20h15"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="#top">
+      <span class="mark"><svg><use href="#i-compass"/></svg></span>
+      <span class="brand-t">Навигатор<em>Туризм.РФ</em></span>
+    </a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#welcome">Приветствие</a><a href="#corp">О корпорации</a>
+      <a href="#values">Ценности</a>
+      <a href="#schedule">Распорядок</a>
+      <a href="#vacation">Отпуск</a>
+      <a href="#access">Доступы</a>
+      <a href="#culture">Культура</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="sheet">
+      <svg><use href="#i-menu"/></svg> Меню
+    </button>
+  </div>
+</header>
+
+<div class="mpill" id="mpill" data-open="false">
+  <div class="mpill-bar">
+    <a class="mpill-brand" href="#top" aria-label="Наверх"><svg viewBox="52.21 52.84 66 64.14" aria-hidden="true"><polygon fill="#183a68" points="107.28 52.84 52.21 52.84 52.21 67.77 71.24 67.77 71.24 116.98 88.25 116.98 88.25 67.77 107.28 67.77 107.28 52.84"/><circle fill="#e40428" cx="107.28" cy="106.04" r="10.93"/></svg></a>
+    <div class="mpill-tabs" id="mpillTabs" data-edge="both"></div>
+    <button class="mpill-burger" id="mpillBtn" type="button" aria-expanded="false" aria-controls="mpillPanel" aria-label="Меню разделов"><svg><use href="#i-menu"/></svg></button>
+  </div>
+  <div class="mpill-panel" id="mpillPanel"><div class="mpill-head"><span>Вводный курс</span><button class="mpill-close" type="button" aria-label="Закрыть меню"><svg width="16" height="16"><use href="#i-close"/></svg></button></div><div class="mpill-links" id="mpillLinks"></div><div class="mpill-contacts"><p class="mpill-contacts__t">Полезные контакты</p><a href="mailto:hr_admin@tourrf.ru"><b>HR</b><span>hr_admin@tourrf.ru</span></a><a href="mailto:servicedesk@tourrf.ru"><b>Поддержка</b><span>servicedesk@tourrf.ru</span></a></div></div>
+</div>
+
+<div class="sheet" id="sheet" data-open="false" role="dialog" aria-modal="true" aria-label="Меню разделов">
+  <div class="sheet-top">
+    <span class="brand-t" style="font-size:15px">Вводный курс</span>
+    <button class="sheet-close" id="sheetClose" aria-label="Закрыть меню"><svg width="20" height="20"><use href="#i-close"/></svg></button>
+  </div>
+  <div class="sheet-list">
+    <a href="#welcome">Приветствие</a>
+    <a href="#corp">Корпорация</a>
+    <a href="#values">Во что мы верим</a>
+    <a href="#schedule">Распорядок</a>
+    <a href="#vacation">Отпуск и отсутствие</a>
+    <a href="#access">Доступы и ПО</a>
+    <a href="#culture">Корпоративная культура</a>
+    <a href="#portal">Корпоративный портал</a>
+  </div>
+</div>
+
+<main id="main">
+  <span id="top"></span>
+
+  <section class="hero" id="hero" aria-labelledby="hero-h">
+    <div class="hero-pin">
+      <div class="hero-cards" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="eyebrow">Вводный курс</p>
+        <h1 id="hero-h">Добро пожаловать в&nbsp;<mark>Туризм.РФ</mark></h1>
+        <p class="hero-sub">Короткий навигатор по корпорации: как мы устроены, где что лежит и к кому идти с вопросом.</p>
+        </div>
+      <div class="hero-hint" aria-hidden="true"><span>Листайте</span><i></i></div>
+    </div>
+  </section>
+
+  <section class="section s-white" id="welcome" aria-labelledby="welcome-h">
+    <div class="container">
+      <div class="sec-head reveal">
+        <h2 id="welcome-h">Приветствие генерального директора</h2>
+      </div>
+      <div class="quote reveal">
+        <p>Коллеги, добро пожаловать в команду!</p>
+        <p>Сегодня мы работаем как полноценный партнёр и федеральный институт развития туристической отрасли: соединяем инвестиции, инфраструктуру, цифровые решения, маршруты и подготовку кадров.</p>
+        <p>Каждый проект начинается с людей, которые приходят в корпорацию. Ваш опыт и инициатива делают его сильнее, а вопросы здесь принято задавать сразу, не накапливая их.</p>
+      </div>
+      <div class="person reveal">
+        <span class="avatar"><img class="avatar-img" alt="" src="img/av-01-shvets.jpg"/></span>
+        <span>
+          <span class="person-name">Швец Василий Александрович</span>
+          <span class="person-role">Генеральный директор АО «Корпорация Туризм.РФ»</span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section s-white" id="corp" aria-labelledby="corp-h">
+    <div class="container">
+      <div class="sec-head reveal">
+        <h2 id="corp-h">О корпорации</h2>
+      </div>
+
+      <div data-tabs>
+        <div class="tabs" role="tablist" aria-label="Корпорация">
+          <button class="tab" role="tab" id="t-corp-1" aria-controls="p-corp-1" aria-selected="true">Институт развития туризма</button>
+          <button class="tab" role="tab" id="t-corp-2" aria-controls="p-corp-2" aria-selected="false" tabindex="-1">Нацпроект</button>
+          <button class="tab" role="tab" id="t-corp-4" aria-controls="p-corp-4" aria-selected="false" tabindex="-1">Совет директоров</button>
+          <button class="tab" role="tab" id="t-corp-5" aria-controls="p-corp-5" aria-selected="false" tabindex="-1">Руководство</button>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-corp-1" aria-labelledby="t-corp-1">
+          <div class="bento">
+            <div class="corp-intro">
+              <span class="corp-ico" aria-hidden="true"><svg><use href="#i-t"/></svg></span>
+              <p class="corp-name">Туризм.РФ</p>
+              <p class="corp-lede">Помогаем подготовить инвестпроекты, привлекаем финансирование и работаем как партнёр-проводник между государством, бизнесом и регионами</p>
+            </div>
+            <div class="card w2">
+              <div class="card-head"><svg class="corp-ico-img" aria-hidden="true"><use href="#i-person"/></svg><h3>Зачем мы работаем</h3></div>
+              <div class="tear" aria-hidden="true"><svg class="cut cut--l"><use href="#i-cut-l"/></svg><span class="tear-line"></span><svg class="cut cut--r"><use href="#i-cut-r"/></svg></div>
+              <p>Чтобы путешествия в России были насыщенными и безопасными, а регионы развивались и получали больше туристов.</p>
+            </div>
+            <div class="card w3">
+              <div class="card-head"><svg class="corp-ico-img" aria-hidden="true"><use href="#i-bed"/></svg><h3>Что создаём</h3></div>
+              <div class="tear" aria-hidden="true"><svg class="cut cut--l"><use href="#i-cut-l"/></svg><span class="tear-line"></span><svg class="cut cut--r"><use href="#i-cut-r"/></svg></div>
+              <p>Отели, курорты, маршруты, цифровые сервисы и сильные региональные команды, которые вместе делают путешествия по стране удобнее и интереснее.</p>
+            </div>
+            <div class="card w3">
+              <div class="card-head"><svg class="corp-ico-img" aria-hidden="true"><use href="#i-star"/></svg><h3>Как измеряем результат</h3></div>
+              <div class="tear" aria-hidden="true"><svg class="cut cut--l"><use href="#i-cut-l"/></svg><span class="tear-line"></span><svg class="cut cut--r"><use href="#i-cut-r"/></svg></div>
+              <p>По тому, растёт ли турпоток в регионах, появляются ли новые качественные проекты и инфраструктура и становится ли поездка по России проще и привлекательнее для людей и инвесторов.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-corp-2" aria-labelledby="t-corp-2" hidden>
+          <div class="bento">
+            <div class="corp-intro">
+              <span class="corp-ico" aria-hidden="true"><svg><use href="#i-np"/></svg></span>
+              <p class="corp-name">Туризм и гостеприимство</p>
+              <p class="corp-lede">Реализуем национальный проект как ключевой инфраструктурный партнёр регионов: создаём туристические объекты, номерной фонд и инвестируем в инфраструктуру.</p>
+            </div>
+            <div class="card w4">
+              <div class="ico-wrap ico-wrap--lime"><svg><use href="#i-building"/></svg></div>
+              <h3>Номерной фонд и инфраструктура</h3>
+              <p>Отели, санатории, глэмпинги, фестивали, маршруты и пляжи в регионах.</p>
+            </div>
+            <div class="card w2">
+              <div class="ico-wrap ico-wrap--lime"><svg><use href="#i-globe"/></svg></div>
+              <h3>Пять морей и Байкал</h3>
+              <p>Морские курорты, где отдыхать можно круглый год.</p>
+            </div>
+            <div class="card w2">
+              <div class="ico-wrap ico-wrap--lime"><svg><use href="#i-spark"/></svg></div>
+              <h3>Отечественное производство</h3>
+              <p>Оборудование и техника: от палаток до автобусов.</p>
+            </div>
+            <div class="card w2">
+              <div class="ico-wrap ico-wrap--lime"><svg><use href="#i-pin"/></svg></div>
+              <h3>Привлекательность страны</h3>
+              <p>Проще выбрать маршрут и отель, проверить гида.</p>
+            </div>
+            <div class="card w2">
+              <div class="ico-wrap ico-wrap--lime"><svg><use href="#i-users"/></svg></div>
+              <h3>Кадры для туризма</h3>
+              <p>Образовательные программы с практикой.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-corp-4" aria-labelledby="t-corp-4" hidden>
+          <div class="bento">
+            <div class="card w2">
+              <div class="card-num">ПРЕДСЕДАТЕЛЬ</div>
+              <div class="p-row">
+                <img class="av av--img" alt="" src="img/av-02-reshetnikov.jpg"/>
+                <span>
+                  <b>Решетников Максим Геннадьевич</b>
+                  <span class="p-role">Министр экономического развития Российской Федерации</span>
+                </span>
+              </div>
+            </div>
+            <div class="card w2">
+              <div class="card-num">ЗАМЕСТИТЕЛЬ ПРЕДСЕДАТЕЛЯ</div>
+              <div class="p-row">
+                <img class="av av--img" alt="" src="img/av-03-vahrukov.jpg"/>
+                <span>
+                  <b>Вахруков Дмитрий Сергеевич</b>
+                  <span class="p-role">Заместитель Министра экономического развития Российской Федерации</span>
+                </span>
+              </div>
+            </div>
+            <div class="card w2">
+              <div class="card-num">ЧЛЕН СОВЕТА</div>
+              <div class="p-row">
+                <img class="av av--img" alt="" src="img/av-04-gordeev.jpg"/>
+                <span>
+                  <b>Гордеев Юрий Сергеевич</b>
+                  <span class="p-role">Заместитель Министра строительства и жилищно-коммунального хозяйства Российской Федерации</span>
+                </span>
+              </div>
+            </div>
+            <div class="card w2">
+              <div class="card-num">ЧЛЕН СОВЕТА</div>
+              <div class="p-row">
+                <img class="av av--img" alt="" src="img/av-05-kadochnikov.jpg"/>
+                <span>
+                  <b>Кадочников Павел Анатольевич</b>
+                  <span class="p-role">Заместитель Министра финансов Российской Федерации</span>
+                </span>
+              </div>
+            </div>
+            <div class="card w2">
+              <div class="card-num">ЧЛЕН СОВЕТА</div>
+              <div class="p-row">
+                <img class="av av--img" alt="" src="img/av-06-popov.jpg"/>
+                <span>
+                  <b>Попов Михаил Сергеевич</b>
+                  <span class="p-role">Заместитель руководителя Росимущества</span>
+                </span>
+              </div>
+            </div>
+            <div class="card w2">
+              <div class="card-num">ЧЛЕН СОВЕТА</div>
+              <div class="p-row">
+                <img class="av av--img" alt="" src="img/av-07-chupsheva.jpg"/>
+                <span>
+                  <b>Чупшева Светлана Витальевна</b>
+                  <span class="p-role">Генеральный директор Агентства стратегических инициатив</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-corp-5" aria-labelledby="t-corp-5" hidden>
+          <div class="bento">
+            <div class="card w6" style="background:var(--ink);color:#fff">
+              <div class="p-row">
+                <img class="av av--img av--darkimg" alt="" src="img/av-01-shvets.jpg"/>
+                <span>
+                  <b style="color:#fff">Швец Василий Александрович</b>
+                  <span class="p-role" style="color:rgba(255,255,255,.72)">Генеральный директор</span>
+                </span>
+              </div>
+              <p style="margin-top:12px;color:rgba(255,255,255,.72)">Назначен Советом директоров 22 июня 2026 года.</p>
+            </div>
+            <div class="card w2"><div class="card-num">Региональная и кадровая политика</div><div class="p-row"><img class="av av--img" alt="" src="img/av-09-ivanov.jpg"/><span><b>Иванов Сергей Евгеньевич</b><span class="p-role">Исполнительный директор</span></span></div></div>
+            <div class="card w2"><div class="card-num">Развитие туристической отрасли</div><div class="p-row"><img class="av av--img" alt="" src="img/av-10-voronov.jpg"/><span><b>Воронов Виталий Сергеевич</b><span class="p-role">Исполнительный директор</span></span></div></div>
+            <div class="card w2"><div class="card-num">Административная деятельность и контроль</div><div class="p-row"><img class="av av--img" alt="" src="img/av-11-schepanovskiy.jpg"/><span><b>Щепановский Евгений Анатольевич</b><span class="p-role">Заместитель генерального директора</span></span></div></div>
+            <div class="card w2"><div class="card-num">Правовые и корпоративные отношения</div><div class="p-row"><img class="av av--img" alt="" src="img/av-12-merzlyy.jpg"/><span><b>Мёрзлый Иван Владимирович</b><span class="p-role">Заместитель генерального директора</span></span></div></div>
+            <div class="card w2"><div class="card-num">Туристическая инфраструктура</div><div class="p-row"><img class="av av--img" alt="" src="img/av-13-yunaev.jpg"/><span><b>Юнаев Руслан Геннадьевич</b><span class="p-role">Заместитель генерального директора</span></span></div></div>
+            <div class="card w2"><div class="card-num">Финансы и экономика</div><div class="p-row"><img class="av av--img" alt="" src="img/av-14-kulabuhov.jpg"/><span><b>Кулабухов Максим Николаевич</b><span class="p-role">Заместитель генерального директора</span></span></div></div>
+            <div class="card w2"><div class="card-num">Приоритетные федеральные проекты</div><div class="p-row"><img class="av av--img" alt="" src="img/av-15-yashkov.jpg"/><span><b>Яшков Владимир Алексеевич</b><span class="p-role">Заместитель генерального директора</span></span></div></div>
+          </div>
+          <p style="margin-top:14px;font-size:13.5px;color:var(--muted)">Полная схема с департаментами доступна в Bitrix24. Актуальный состав: <a href="https://туризм.рф/management/" target="_blank" rel="noopener" style="font-weight:700;color:var(--blue)">туризм.рф/management</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section s-ghost" id="values" aria-labelledby="values-h">
+    <div class="stack-track">
+      <div class="stack-stage">
+        <div class="stack-head">
+          <p class="eyebrow">Ценности</p>
+          <h2 id="values-h">Во что мы верим</h2>
+        </div>
+        <div class="stack-deck">
+          <article class="vcard" style="--vc:#0c73fe;z-index:1">
+            <span class="vcard__num" aria-hidden="true">01</span>
+            <div class="vcard__body">
+              <h3>Сотрудничество</h3>
+              <p>Уважаем коллег и партнёров вне зависимости от должности и места работы. Строим отношения вдолгую.</p>
+            </div>
+          </article>
+          <article class="vcard" style="--vc:#ff6a3d;z-index:2">
+            <span class="vcard__num" aria-hidden="true">02</span>
+            <div class="vcard__body">
+              <h3>Результат</h3>
+              <p>Ставим амбициозные, но достижимые цели, делаем для них всё возможное и измеряем эффективность.</p>
+            </div>
+          </article>
+          <article class="vcard" style="--vc:#12a05f;z-index:3">
+            <span class="vcard__num" aria-hidden="true">03</span>
+            <div class="vcard__body">
+              <h3>Ответственность</h3>
+              <p>Не только показываем проблему, но и предлагаем решение. Отвечаем за общий результат.</p>
+            </div>
+          </article>
+          <article class="vcard" style="--vc:#7c5cff;z-index:4">
+            <span class="vcard__num" aria-hidden="true">04</span>
+            <div class="vcard__body">
+              <h3>Команда</h3>
+              <p>Мы разные и дополняем друг друга. Слышим коллег и предлагаем помощь.</p>
+            </div>
+          </article>
+          <article class="vcard" style="--vc:#c9f26b;--vc-fg:#0c131d;z-index:5">
+            <span class="vcard__num" aria-hidden="true">05</span>
+            <div class="vcard__body">
+              <h3>Инициатива</h3>
+              <p>Открыты инновациям и лучшим практикам. Ценим инициативность и идеи коллег.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section class="section s-sky" id="schedule" aria-labelledby="sch-h">
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="eyebrow">Трудовой распорядок</p>
+        <h2 id="sch-h">Всё, что нужно знать новичку</h2>
+      </div>
+
+      <div data-tabs>
+        <div class="tabs" role="tablist" aria-label="Всё, что нужно знать новичку">
+          <button class="tab" role="tab" id="t-sch-0" aria-controls="p-sch-0" aria-selected="true">Зарплата</button>
+          <button class="tab" role="tab" id="t-sch-1" aria-controls="p-sch-1" aria-selected="false" tabindex="-1">Режим работы</button>
+          <button class="tab" role="tab" id="t-sch-2" aria-controls="p-sch-2" aria-selected="false" tabindex="-1">Дресс-код</button>
+          <button class="tab" role="tab" id="t-sch-4" aria-controls="p-sch-4" aria-selected="false" tabindex="-1">Офис</button>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-sch-0" aria-labelledby="t-sch-0">
+          <p class="pay-sub">Гуляем, летаем</p>
+          <div class="pay">
+            <div class="pay-card"><b>5-го</b></div>
+            <div class="pay-card"><b>20-го</b></div>
+          </div>
+          <p style="margin-top:14px;font-size:13.5px;line-height:1.45;color:var(--muted)">Начисляется два раза в месяц. Если один из этих дней выпадает на выходной или праздничный день — зарплата выплачивается накануне.</p>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-sch-1" aria-labelledby="t-sch-1" hidden>
+          <div class="kv">
+            <div>Понедельник — четверг <b>9:00 — 18:00</b></div>
+            <div>Пятница <b>9:00 — 16:45</b></div>
+            <div>Обед плавающий <b>45 мин, 13:00 — 16:00</b></div>
+            <div>Предпраздничные дни <b>короче на 1 час</b></div>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-sch-2" aria-labelledby="t-sch-2" hidden>
+          <div class="two">
+            <div class="card">
+              <h3 style="font-size:15px;margin-bottom:10px">Можно</h3>
+              <ul class="dl dl--ok">
+                <li>Деловой стиль — обязателен для встреч с внешними контрагентами</li>
+                <li>Smart casual для офисной работы</li>
+                <li>Пятница: можно джинсы</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 style="font-size:15px;margin-bottom:10px">Нельзя</h3>
+              <ul class="dl dl--no">
+                <li>Пляжный, спортивный и вечерний стиль</li>
+                <li>Слишком открытая или прозрачная одежда</li>
+                <li>Рваная, дырявая и сетчатая одежда</li>
+                <li>Стразы, крупные логотипы, ненормативные надписи</li>
+              </ul>
+            </div>
+          </div>
+          <p style="margin-top:12px;font-size:13.5px;color:var(--muted)">Парфюм — умеренно: в опенспейсе это чувствуют все.</p>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-sch-4" aria-labelledby="t-sch-4" hidden>
+          <div class="bento">
+            <div class="card w6">
+              <div class="ico-wrap" style="background:rgba(12,115,254,.09);color:var(--blue)"><svg><use href="#i-pin"/></svg></div>
+              <h3>ул. Красная Пресня, 22</h3>
+              <p>Этажи: 2, 3, 4 и 6.</p>
+            </div>
+          </div>
+          <div class="bento" style="margin-top:10px">
+            <div class="card w6">
+              <div class="ico-wrap" style="background:rgba(46,204,155,.14);color:#12a05f"><svg><use href="#i-calendar"/></svg></div>
+              <h3>Переговорные</h3>
+              <p>Бронируются через календарь в рабочей почте. Наши переговорные: 3.2, 3.3 и 6.1.</p>
+            </div>
+            <div class="card w6">
+              <div class="ico-wrap" style="background:rgba(255,197,61,.2);color:#9a6b00"><svg><use href="#i-cup"/></svg></div>
+              <h3>Кофепойнты на каждом этаже</h3>
+              <p>Холодильник, СВЧ, кулер, чайник, кофемашина. Чай, кофе, сахар, чашка и приборы — свои.</p>
+              <div class="warn">
+                <svg class="warn__ico" aria-hidden="true"><use href="#i-warn"/></svg>
+                <div><span>Мы не разогреваем — морепродукты, капусту, лук и чеснок.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <section class="section s-white" id="vacation" aria-labelledby="vac-h">
+    <div class="container">
+      <div class="sec-head reveal">
+        <h2 id="vac-h">Отпуск и отсутствие</h2>
+      </div>
+
+      <div class="nums reveal">
+        <div class="num-pair num-pair--hero">
+          <div class="num"><b>28</b><span>календарных дней ежегодного отпуска</span></div>
+          <div class="num"><b>14</b><span>дней — минимум в одном из периодов отпуска</span></div>
+        </div>
+      </div>
+
+      <div class="rows rows--soft reveal" style="margin-top:26px">
+        <div class="row">
+          <svg class="r-ico"><use href="#i-clock"/></svg>
+          <div>
+            <h4>Дополнительные дни</h4>
+            <p>Дополнительные дни за ненормированный день, если прописано в договоре.</p>
+          </div>
+        </div>
+        <div class="row">
+          <svg class="r-ico"><use href="#i-doc"/></svg>
+          <div>
+            <h4>Отпуск за свой счёт</h4>
+            <p>Предоставляется по согласованию с руководителем.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hrs-sep" role="presentation"></div>
+
+      <div class="num-solo reveal"><b>15</b><span>рабочих дней больничного в году компенсируются до 100%.</span></div>
+
+      <div class="rows rows--soft reveal">
+        <div class="row">
+          <svg class="r-ico"><use href="#i-shield"/></svg>
+          <div>
+            <h4>Больничный</h4>
+            <p>Сразу сообщите руководителю и в отдел кадрового администрирования, не дожидаясь закрытия больничного.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal hrs-note">
+        <div class="hrs-sep" role="presentation"></div>
+        <p class="hrs-cap">Если будете отсутствовать или нужно перенести отпуск — напишите в кадры</p>
+        <button class="copy copy--nowrap" data-copy="hr_admin@tourrf.ru" type="button" style="min-height:48px;padding:0 18px;font-size:13.5px;background:#f6f7f9"><svg><use href="#i-copy"/></svg> hr_admin@tourrf.ru</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section s-ink" id="access" aria-labelledby="acc-h">
+    <div class="container">
+      <div class="sec-head reveal">
+        <h2 id="acc-h">Точно пригодится</h2>
+      </div>
+
+            <div class="acc-buttons">
+          <button class="acc-btn" type="button" data-acc="p-acc-1" data-title="Полезные контакты">
+            <span class="acc-btn__t">Полезные контакты</span>
+            <span class="acc-btn__plus" aria-hidden="true"><svg><use href="#i-plus"/></svg></span><span class="acc-btn__art" aria-hidden="true"><svg><use href="#i-chat"/></svg></span>
+          </button>
+          <button class="acc-btn" type="button" data-acc="p-acc-2" data-title="Почта">
+            <span class="acc-btn__t">Почта</span>
+            <span class="acc-btn__plus" aria-hidden="true"><svg><use href="#i-plus"/></svg></span><span class="acc-btn__art" aria-hidden="true"><svg><use href="#i-mail"/></svg></span>
+          </button>
+          <button class="acc-btn" type="button" data-acc="p-acc-3" data-title="Кадровые документы">
+            <span class="acc-btn__t">Кадровые документы</span>
+            <span class="acc-btn__plus" aria-hidden="true"><svg><use href="#i-plus"/></svg></span><span class="acc-btn__art" aria-hidden="true"><svg><use href="#i-doc"/></svg></span>
+          </button>
+          <button class="acc-btn" type="button" data-acc="p-acc-4" data-title="Файлы">
+            <span class="acc-btn__t">Файлы</span>
+            <span class="acc-btn__plus" aria-hidden="true"><svg><use href="#i-plus"/></svg></span><span class="acc-btn__art" aria-hidden="true"><svg><use href="#i-folder"/></svg></span>
+          </button>
+          <button class="acc-btn" type="button" data-acc="p-acc-5" data-title="Программы">
+            <span class="acc-btn__t">Программы</span>
+            <span class="acc-btn__plus" aria-hidden="true"><svg><use href="#i-plus"/></svg></span><span class="acc-btn__art" aria-hidden="true"><svg><use href="#i-monitor"/></svg></span>
+          </button>
+          <button class="acc-btn" type="button" data-acc="p-acc-6" data-title="Против коррупции">
+            <span class="acc-btn__t">Против коррупции</span>
+            <span class="acc-btn__plus" aria-hidden="true"><svg><use href="#i-plus"/></svg></span><span class="acc-btn__art" aria-hidden="true"><svg><use href="#i-shield"/></svg></span>
+          </button>
+      </div>
+
+      <div class="modal" id="accModal" hidden>
+        <div class="modal__backdrop" data-close-acc></div>
+        <div class="modal__panel modal__panel--acc" role="dialog" aria-modal="true" aria-labelledby="accModalTitle" aria-describedby="accModalSub">
+          <button class="modal__close" type="button" data-close-acc aria-label="Закрыть"><svg><use href="#i-close"/></svg></button>
+          <div class="modal__head">
+            <h3 id="accModalTitle"></h3>
+            <p class="modal__sub" id="accModalSub"></p>
+          </div>
+          <div class="modal__body">
+            <div class="panel" role="tabpanel" id="p-acc-1" aria-labelledby="t-acc-1">
+              <p class="sub-p">Единая точка входа в поддержку: техника, доступы и офисные службы.</p>
+              <div class="bento">
+                <div class="card w3">
+                  <div class="ico-wrap"><svg><use href="#i-monitor"/></svg></div>
+                  <h3>ServiceDesk</h3>
+                  <p>Техника, доступы, программы, информационная безопасность. Первое, куда писать, если что-то не работает.</p>
+                  <div class="desk-num">7007</div>
+                  <p class="desk-cap">Внутренний телефон</p>
+                  <button class="copy" data-copy="servicedesk@tourrf.ru" type="button"><svg><use href="#i-copy"/></svg> servicedesk@tourrf.ru</button>
+                </div>
+
+                <div class="card w3" style="order:-1">
+                  <div class="ico-wrap"><svg><use href="#i-users"/></svg></div>
+                  <h3>Кадры</h3>
+                  <p>Отпуск, больничный, справки, расчётный лист.</p>
+                  <button class="copy" data-copy="hr_admin@tourrf.ru" type="button"><svg><use href="#i-copy"/></svg> hr_admin@tourrf.ru</button>
+                  <div class="sub-people">
+                    <div class="p-row">
+                      <img class="av av--img" alt="" src="img/av-16-polina.jpg"/>
+                      <span>
+                        <b>Полина Панина</b>
+                        <span class="p-role">Руководитель отдела кадрового администрирования</span>
+                        <a class="tel" href="tel:+79269643161"><svg width="13" height="13"><use href="#i-phone"/></svg> +7 (926) 964-31-61</a>
+                      </span>
+                    </div>
+                    <div class="p-row">
+                      <img class="av av--img" alt="" src="img/av-17-natalya.jpg"/>
+                      <span>
+                        <b>Наталья Солдатова</b>
+                        <span class="p-role">Ведущий специалист отдела кадрового администрирования</span>
+                        <a class="tel" href="tel:+79124607109"><svg width="13" height="13"><use href="#i-phone"/></svg> +7 (912) 460-71-09</a>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card w2">
+                  <div class="ico-wrap"><svg><use href="#i-building"/></svg></div>
+                  <h3>Хозяйственное обеспечение</h3>
+                  <p>Пропуск, рабочее место, бытовые вопросы.</p>
+                  <button class="copy" data-copy="admsupport@tourrf.ru" type="button"><svg><use href="#i-copy"/></svg> admsupport@tourrf.ru</button>
+                </div>
+
+                <div class="card w2">
+                  <div class="ico-wrap"><svg><use href="#i-folder"/></svg></div>
+                  <h3>Курьерская служба</h3>
+                  <p>Отправить или получить документы.</p>
+                  <button class="copy" data-copy="courier_service@tourrf.ru" type="button"><svg><use href="#i-copy"/></svg> courier_service@tourrf.ru</button>
+                </div>
+
+                <div class="card w2">
+                  <div class="ico-wrap"><svg><use href="#i-spark"/></svg></div>
+                  <h3>Презентации</h3>
+                  <p>Оформление в фирменном стиле.</p>
+                  <button class="copy" data-copy="design@tourrf.ru" type="button"><svg><use href="#i-copy"/></svg> design@tourrf.ru</button>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="panel" role="tabpanel" id="p-acc-2" aria-labelledby="t-acc-2">
+              <p class="sub-p">Почта и встречи: адрес в домене tourrf.ru, календарь и фирменная подпись.</p>
+              <div class="bento">
+                <div class="card w3">
+                  <div class="ico-wrap" style="background:rgba(46,204,155,.14);color:#12a05f"><svg><use href="#i-mail"/></svg></div>
+                  <h3>Персональный ящик</h3>
+                  <p>Адрес вида имя.фамилия@tourrf.ru. Кроме переписки почта назначает встречи и бронирует переговорные.</p>
+                  <a class="copy" href="https://mail.tourrf.ru/" target="_blank" rel="noopener" style="text-decoration:none">mail.tourrf.ru <svg><use href="#i-arrow"/></svg></a>
+                </div>
+                <div class="card w3">
+                  <div class="ico-wrap" style="background:rgba(12,115,254,.09);color:#0c73fe"><svg><use href="#i-chat"/></svg></div>
+                  <h3>Связь и встречи</h3>
+                  <p>IVA Connect — видеоконференции, лекции и вебинары. Битрикс24 — календарь, задачи и обмен файлами.</p>
+                  <p style="margin-top:8px;font-size:13px">Установка IVA Connect — через ServiceDesk: 7007.</p>
+                </div>
+                <div class="card w6">
+                  <h3 style="margin-bottom:10px">Шаблон подписи</h3>
+                  <div class="sig">С уважением,
+Алексей Иванов
+Ведущий специалист
+Управление по работе с персоналом
+АО «Корпорация Туризм.РФ»
+Тел.: 8 (800) 511-86-44, доб. 7322
+Моб.: +7 (985) 114-28-57
+Email: a.ivanov@tourrf.ru
+https://туризм.рф</div>
+                  <button class="copy" data-copy="С уважением,
+Алексей Иванов
+Ведущий специалист
+Управление по работе с персоналом
+АО «Корпорация Туризм.РФ»
+Тел.: 8 (800) 511-86-44, доб. 7322
+Моб.: +7 (985) 114-28-57
+Email: a.ivanov@tourrf.ru
+https://туризм.рф" type="button" style="min-height:44px"><svg><use href="#i-copy"/></svg> Скопировать шаблон</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel" role="tabpanel" id="p-acc-3" aria-labelledby="t-acc-3">
+              <p class="sub-p">Кадровые документы и электронная подпись: 1С и «Лексема».</p>
+              <div class="bento">
+                <div class="card w3">
+                  <div class="ico-wrap"><svg><use href="#i-doc"/></svg></div>
+                  <h3>1С:Предприятие</h3>
+                  <p>Система учёта кадров корпорации.</p>
+                </div>
+                <div class="card w3" style="order:-1">
+                  <div class="ico-wrap" style="background:rgba(124,92,255,.12);color:#7c5cff"><svg><use href="#i-key"/></svg></div>
+                  <h3>Лексема</h3>
+                  <p>Здесь создаём и подписываем все документы на отпуск и переводы.</p>
+                </div>
+                <div class="card w6">
+                  <div class="rows rows--plain">
+                    <div class="row"><span class="row-k">01</span><div><h4>Работодатель формирует документ</h4></div></div>
+                    <div class="row"><span class="row-k">02</span><div><h4>Вы подписываете его электронной подписью</h4></div></div>
+                    <div class="row"><span class="row-k">03</span><div><h4>Документ хранится в системе</h4></div></div>
+                    <div class="row"><span class="row-k">04</span><div><h4>Вы можете формировать документы сами: заявления, отгулы</h4></div></div>
+                  </div>
+                </div>
+                <div class="card w6">
+                  <h3 style="font-size:15px">Если что-то не так</h3>
+                  <p>Технические вопросы — <b>servicedesk@tourrf.ru</b>. Вопросы по процессу — <b>hr_admin@tourrf.ru</b>. Ещё можно нажать «Написать в техподдержку» внутри «Лексемы».</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel" role="tabpanel" id="p-acc-4" aria-labelledby="t-acc-4">
+              <p class="sub-p">Для отправки файлов используй Корпоративное хранилище данных.</p>
+              <div class="rows">
+                <a class="row" href="https://storage.dc.tourrf.ru" target="_blank" rel="noopener" style="text-decoration:none">
+                  <svg class="r-ico"><use href="#i-building"/></svg>
+                  <div style="flex:1"><h4>Из внутренней сети</h4><p>storage.dc.tourrf.ru</p></div>
+                  <svg width="16" height="16" style="opacity:.5"><use href="#i-arrow"/></svg>
+                </a>
+                <a class="row" href="https://tourrf.quickconnect.to" target="_blank" rel="noopener" style="text-decoration:none">
+                  <svg class="r-ico"><use href="#i-globe"/></svg>
+                  <div style="flex:1"><h4>Из внешней сети</h4><p>tourrf.quickconnect.to</p></div>
+                  <svg width="16" height="16" style="opacity:.5"><use href="#i-arrow"/></svg>
+                </a>
+                <div class="row">
+                  <svg class="r-ico"><use href="#i-phone"/></svg>
+                  <div style="flex:1"><h4>С телефона</h4><p>Приложение Synology Drive — Android и iOS.</p></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel" role="tabpanel" id="p-acc-5" aria-labelledby="t-acc-5">
+              <p class="sub-p">Что установлено на рабочем месте и чем пользуемся в работе каждый день.</p>
+              <h3 class="prog-title prog-title--first">Операционные системы и базовые приложения</h3>
+              <div class="bento"><div class="card w6 prog-card"><span class="app-logo" aria-hidden="true" style="background:#16233f;color:#fff">A</span><div class="prog-body"><h4>Astra Linux, RedOS</h4><p>Операционные системы, установленные на рабочих станциях.</p></div></div><div class="card w6 prog-card"><span class="app-logo" aria-hidden="true" style="background:#fc3f1d;color:#fff">Я</span><div class="prog-body"><h4>Яндекс Браузер (корпоративная версия)</h4><p>Основной браузер для работы с внутренними и внешними ресурсами.</p></div></div><div class="card w6 prog-card"><span class="app-logo" aria-hidden="true" style="background:#e8442e;color:#fff">Р7</span><div class="prog-body"><h4>Р7-Офис</h4><p>Пакет офисных приложений для работы с документами, таблицами и презентациями.</p></div></div><div class="card w6 prog-card"><span class="app-logo" aria-hidden="true" style="background:#2b6cb0;color:#fff">PX</span><div class="prog-body"><h4>Система печати PrintX</h4><p>Корпоративное решение для печати документов.</p></div></div><div class="card w6 prog-card"><span class="app-logo" aria-hidden="true" style="background:#0b4f9e;color:#fff"><svg><use href="#i-key"/></svg></span><div class="prog-body"><h4>КриптоПро CSP</h4><p>Средство криптографической защиты информации для работы с электронной подписью и защищёнными каналами.</p></div></div></div>
+              <h3 class="prog-title">Внутренние системы и сервисы</h3>
+              <div class="bento"><div class="card w6 prog-card"><span class="app-logo" aria-hidden="true" style="background:#2fc7f7;color:#06303f">Б24</span><div class="prog-body"><h4>Битрикс 24</h4><p>Система управления внутренними задачами.</p><div class="prog-actions"><a class="copy" href="https://www.bitrix24.ru/features/mobile-app/" target="_blank" rel="noopener" style="margin-top:0;text-decoration:none"><svg><use href="#i-download"/></svg> Приложение</a><a class="copy" href="https://crm.tourrf.ru/bitrix/tools/disk/focus.php?objectId=22825&amp;cmd=show&amp;action=showObjectInGrid&amp;ncc=1" target="_blank" rel="noopener" style="margin-top:0;text-decoration:none"><svg><use href="#i-doc"/></svg> Инструкция</a></div></div></div><div class="card w6 prog-card"><span class="app-logo" aria-hidden="true" style="background:#0c73fe;color:#fff"><svg><use href="#i-globe"/></svg></span><div class="prog-body"><h4>Внутренний портал</h4><p>Новости компании, адресная книга, сведения об отсутствии сотрудников.</p></div></div><div class="card w6 prog-card"><span class="app-logo" aria-hidden="true" style="background:#7c5cff;color:#fff"><svg><use href="#i-doc"/></svg></span><div class="prog-body"><h4>Лексема</h4><p>Система кадрового электронного документооборота.</p></div></div><div class="card w6 prog-card"><span class="app-logo" aria-hidden="true" style="background:#ffd600;color:#c1121f">1С</span><div class="prog-body"><h4>1С Документооборот</h4><p>Автоматизация работы с документами и бизнес-процессами внутри организации.</p></div></div><div class="card w6 prog-card"><span class="app-logo" aria-hidden="true" style="background:#ffd600;color:#c1121f">1С</span><div class="prog-body"><h4>1С Бухгалтерия БИТ</h4><p>Учёт регламентированных операций и управленческого учёта.</p></div></div></div>
+              <div class="bento" style="margin-top:10px"><div class="card w6" style="background:var(--lime)"><p style="font-size:14.5px;color:rgba(12,19,29,.78)"><b style="color:var(--ink)">Почему всё российское.</b> Корпорация следует политике импортозамещения: используем отечественное оборудование и ПО. Зарубежное — только в индивидуальном порядке, если у задачи нет российского аналога.</p></div></div>
+            </div>
+
+            <div class="panel" role="tabpanel" id="p-acc-6">
+              <p class="sub-p">Коротко о правилах: что считается коррупцией, чего нельзя делать и куда сообщить.</p>
+              <div class="bento">
+                <div class="card w6">
+                  <div class="ico-wrap"><svg><use href="#i-lock"/></svg></div>
+                  <h3>Что считается коррупцией</h3>
+                  <p>Дача и получение взятки, коммерческий подкуп, использование должностного положения в личных целях, конфликт интересов. Корпорация следует требованиям Федерального закона № 273-ФЗ «О противодействии коррупции».</p>
+                </div>
+                <div class="card w3">
+                  <h3 style="margin-bottom:10px">Что нельзя</h3>
+                  <ul class="dl dl--no">
+                    <li>Принимать или предлагать подарки и оплату сверх установленных правил</li>
+                    <li>Использовать служебное положение для личной выгоды</li>
+                    <li>Скрывать конфликт интересов</li>
+                    <li>Передавать инсайдерскую информацию третьим лицам</li>
+                  </ul>
+                </div>
+                <div class="card w3">
+                  <h3 style="margin-bottom:10px">Что нужно</h3>
+                  <ul class="dl dl--ok">
+                    <li>Декларировать конфликт интересов</li>
+                    <li>Согласовывать подарки и представительские расходы</li>
+                    <li>Сообщать о попытках склонения к коррупции</li>
+                  </ul>
+                </div>
+                <div class="card w6">
+                  <h3 style="margin-bottom:10px">Куда сообщить</h3>
+                  <p>Обращения принимаются анонимно. За сообщение о коррупции сотрудник не может быть привлечён к ответственности — это защищено законом.</p>
+                  <button class="copy" data-copy="anticor@tourrf.ru" type="button"><svg><use href="#i-copy"/></svg> anticor@tourrf.ru</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </div>
+  </section>
+
+  <section class="section s-ink" id="infosec" aria-labelledby="isb-h">
+    <div class="container">
+      <div class="sec-head reveal">
+        <h2 id="isb-h">Инфобез</h2>
+      </div>
+      <div class="isb reveal">
+        <div class="acc">
+          <details>
+            <summary><span class="idx">01</span> «Конфиденциально» <span class="plus"><svg><use href="#i-plus"/></svg></span></summary>
+            <div class="acc-body">Обработка регулируется соглашениями о конфиденциальности (NDA).</div>
+          </details>
+          <details>
+            <summary><span class="idx">02</span> Коммерческая тайна <span class="plus"><svg><use href="#i-plus"/></svg></span></summary>
+            <div class="acc-body">Положение о порядке обращения с информацией, составляющей коммерческую тайну, и перечень такой информации.</div>
+          </details>
+          <details>
+            <summary><span class="idx">03</span> «ДСП» <span class="plus"><svg><use href="#i-plus"/></svg></span></summary>
+            <div class="acc-body">Обрабатывается по тем же правилам, что и коммерческая тайна.</div>
+          </details>
+          <details>
+            <summary><span class="idx">04</span> Персональные данные <span class="plus"><svg><use href="#i-plus"/></svg></span></summary>
+            <div class="acc-body">Политика обработки, положение об обеспечении безопасности и положение об обработке персональных данных.</div>
+          </details>
+        </div>
+
+        <div class="rule-card" style="margin-top:16px">
+          <h3>Нельзя</h3>
+          <ul class="dl dl--no">
+            <li>Пересылать рабочую информацию на mail, gmail и другие сторонние ящики</li>
+            <li>Хранить файлы на Яндекс Диске, Google Диске и подобных сервисах</li>
+          </ul>
+        </div>
+
+        <p class="isb-note">Исключение одно: если это прямо предусмотрено соглашением о конфиденциальности.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section s-lime" id="culture" aria-labelledby="culture-h">
+    <div class="container">
+      <div class="sec-head reveal">
+        <h2 id="culture-h">Корпоративная культура</h2>
+      </div>
+
+      <div data-tabs>
+        <div class="tabs" role="tablist" aria-label="Корпоративная культура">
+          <button class="tab" role="tab" id="t-cul-1" aria-controls="p-cul-1" aria-selected="true">Плюшки</button>
+          <button class="tab" role="tab" id="t-cul-2" aria-controls="p-cul-2" aria-selected="false" tabindex="-1">Активности</button>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-cul-1" aria-labelledby="t-cul-1">
+          <div class="rail rail-perks">
+            <article class="card perk">
+              <div class="perk__media">
+                <img src="img/perk-cafe.jpg" alt="Чашка кофе и круассан на столе у окна кафе" width="700" height="525" decoding="async">
+                <span class="perk__tag">Скидка 10% по бейджу</span>
+              </div>
+              <h3>Кафе и рестораны</h3>
+              <p>Партнёрские кафе и рестораны в нескольких минутах от офиса дают скидку по бейджу.</p>
+            </article>
+            <article class="card perk">
+              <div class="perk__media">
+                <img src="img/perk-realty.jpg" alt="Двор современного жилого комплекса с панорамными окнами" width="700" height="525" decoding="async">
+                <span class="perk__tag">Ипотека от 5% годовых</span>
+              </div>
+              <h3>Недвижимость</h3>
+              <p>Партнёрские программы по покупке и аренде жилья: подборка объектов и условия участия.</p>
+            </article>
+            <article class="card perk">
+              <div class="perk__media">
+                <img src="img/perk-rest.jpg" alt="Бассейн и шезлонги на террасе отеля у моря" width="700" height="525" decoding="async">
+                <span class="perk__tag">Отели от 4 500 ₽ за ночь</span>
+              </div>
+              <h3>Отдых</h3>
+              <p>Специальные тарифы на отели и туры для сотрудников и их семей.</p>
+            </article>
+            <article class="card perk">
+              <div class="perk__media">
+                <img src="img/perk-fitness.jpg" alt="Стойка с гантелями в светлом тренажёрном зале" width="700" height="525" decoding="async">
+                <span class="perk__tag">От 1 900 ₽ в месяц</span>
+              </div>
+              <h3>Фитнес</h3>
+              <p>Скидки на абонементы в спортзалы и студии рядом с офисом.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-cul-2" aria-labelledby="t-cul-2" hidden>
+          <div class="rail rail-perks">
+            <article class="card perk"><div class="perk__media"><img src="img/act-sport.jpg" alt="Дружеский матч по футболу"><span class="perk__tag">Командный дух</span></div><h3>Спортивное движение</h3>
+              <p>Дружеские матчи по футболу, оздоровительные пробежки, велозаезды.</p>
+            </article>
+            <article class="card perk"><div class="perk__media"><img src="img/act-culture.jpg" alt="Экскурсия в музее"><span class="perk__tag">История и искусство</span></div><h3>Культурный код</h3>
+              <p>Посещение музеев и экскурсии по городским достопримечательностям.</p>
+            </article>
+            <article class="card perk"><div class="perk__media"><img src="img/act-leisure.jpg" alt="Настольные игры"><span class="perk__tag">Интеллектуалам</span></div><h3>Территория досуга</h3>
+              <p>Квесты, квизы, мастер-классы, турниры по настольным играм.</p>
+            </article>
+            <article class="card perk"><div class="perk__media"><img src="img/act-lunch.jpg" alt="Совместный обед"><span class="perk__tag">По пятницам в 13:00</span></div><h3>Совместный обед</h3>
+              <p>Желающие традиционно идут на совместный обед. Встреча у входа на первом этаже.</p>
+            </article>
+          </div>
+
+          <div class="ask-bar">
+            <span class="ask-main">
+              <p>Присоединяйтесь к активностям</p>
+            </span>
+            <button class="ask-link" type="button" data-open-act>Записаться</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section s-white" id="portal" aria-labelledby="portal-h">
+    <div class="container portal-simple">
+      <img class="portal-art" src="img/portal-rick-and-morty.gif" alt="">
+      <h2 id="portal-h">Портал в туризм</h2>
+      <p class="portal-sub">Корпоративный сайт с новостями и специальными предложениями.</p>
+      <div class="portal-btns">
+        <a class="btn-solid" href="https://portal.tourrf.ru/" target="_blank" rel="noopener">Покажите</a>
+        <a class="btn-soft" href="https://portal.tourrf.ru/structure/" target="_blank" rel="noopener">Телефонный справочник</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section s-ghost" id="thanks" aria-labelledby="thanks-h">
+    <div class="container thanks reveal">
+      <img class="thanks-cat" src="img/thanks-cat.png" width="180" height="166" alt="" aria-hidden="true">
+      <h2 class="thanks-title" id="thanks-h">Вы великолепны!</h2>
+      <p class="thanks-sub">Поэтому работаете у нас</p>
+      <div class="ask-bar">
+        <span class="ask-main">
+          <span class="ask-ico" aria-hidden="true"><svg><use href="#i-demo"/></svg></span>
+          <p>Остались вопросы — мы все объясним</p>
+        </span>
+        <button class="ask-link" type="button" data-open-hr>Помощь</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="modal" id="hrModal" hidden>
+  <div class="modal__backdrop" data-close-hr></div>
+  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="hrTitle">
+    <button class="modal__close" type="button" data-close-hr aria-label="Закрыть"><svg><use href="#i-close"/></svg></button>
+    <h3 id="hrTitle">Помощь</h3>
+    <div class="hr-card">
+      <img class="hr-card__img" src="img/zagalskii.jpg" alt="Алексей Загальский" width="96" height="96">
+      <p class="hr-card__name">Алексей Загальский</p>
+      <p class="hr-card__role">Представитель Управления по работе с персоналом</p>
+      <div class="hr-card__meta">
+        <a class="tel" href="tel:+79175580292"><svg width="13" height="13"><use href="#i-phone"/></svg> +7 (917) 558-02-92</a>
+        <button class="copy" data-copy="a.zagalskii@tourrf.ru" type="button"><svg><use href="#i-copy"/></svg> a.zagalskii@tourrf.ru</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="actModal" hidden>
+  <div class="modal__backdrop" data-close-act></div>
+  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="actTitle">
+    <button class="modal__close" type="button" data-close-act aria-label="Закрыть"><svg><use href="#i-close"/></svg></button>
+    <h3 id="actTitle">Записаться</h3>
+    <div class="hr-card">
+      <img class="hr-card__img" src="img/pecherskikh.jpg" alt="Печерских Антон" width="96" height="96">
+      <p class="hr-card__name">Печерских Антон</p>
+      <p class="hr-card__role">Председатель молодёжного совета</p>
+      <div class="hr-card__meta">
+        <a class="tel" href="tel:+79858170464"><svg width="13" height="13"><use href="#i-phone"/></svg> +7 (985) 817-04-64</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="foot" aria-label="Навигация по разделам и соцсети">
+  <div class="container">
+    <div class="foot-cta">
+      <h2>Что дальше?</h2>
+      <p>Вливайтесь в рабочий процесс и знакомьтесь с коллегами. А если непонятно, с чего начать, откройте быстрый доступ к сервисам.</p>
+      <div class="foot-cta-btns">
+        <a class="btn-ghost" href="#access">Сервисы</a>
+      </div>
+    </div>
+    <p class="foot-label">Разделы</p>
+    <div class="foot-links">
+      <a href="#welcome">Приветствие <svg><use href="#i-arrow"/></svg></a>
+      <a href="#corp">О корпорации <svg><use href="#i-arrow"/></svg></a>
+      <a href="#values">Во что мы верим <svg><use href="#i-arrow"/></svg></a>
+      <a href="#schedule">Трудовой распорядок <svg><use href="#i-arrow"/></svg></a>
+      <a href="#vacation">Отпуск и отсутствие <svg><use href="#i-arrow"/></svg></a>
+      <a href="#access">Доступы и ПО <svg><use href="#i-arrow"/></svg></a>
+      <a href="#culture">Корпоративная культура <svg><use href="#i-arrow"/></svg></a>
+      <a href="#portal">Корпоративный портал <svg><use href="#i-arrow"/></svg></a>
+    </div>
+
+    <div class="soc-row" aria-label="Соцсети">
+      <a class="soc" href="https://t.me/tourrf" target="_blank" rel="noopener" aria-label="Telegram"><svg><use href="#i-plane"/></svg></a>
+      <a class="soc" href="https://max.ru/tourrf" target="_blank" rel="noopener" aria-label="MAX"><svg><use href="#i-chat"/></svg></a>
+      <a class="soc" href="https://vk.com/public203424189" target="_blank" rel="noopener" aria-label="ВКонтакте">VK</a>
+      <a class="soc" href="https://rutube.ru/channel/25266130/" target="_blank" rel="noopener" aria-label="Rutube"><svg><use href="#i-play"/></svg></a>
+      <a class="soc" href="https://dzen.ru/tourrf" target="_blank" rel="noopener" aria-label="Дзен"><svg><use href="#i-spark"/></svg></a>
+      <a class="soc" href="https://туризм.рф/" target="_blank" rel="noopener" aria-label="Сайт Туризм.РФ"><svg><use href="#i-globe"/></svg></a>
+    </div>
+
+    <div class="foot-bottom">
+      <span>АО «Корпорация Туризм.РФ»</span>
+      <span>Красная Пресня, 22 · этажи 2, 3, 4, 6</span>
+      <span>Вводный курс</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite">Скопировано</div>
+
+<script>
+    function vh(){ var el = document.querySelector('.vh'); return (el && el.offsetHeight) || window.innerHeight; }
+(function(){
+  "use strict";
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var bar = document.getElementById('scrollbar');
+  function paintBar(){
+    var doc = document.documentElement;
+    var max = doc.scrollHeight - doc.clientHeight;
+    var w = max > 0 ? (doc.scrollTop / max) * 100 : 0;
+    bar.style.width = w.toFixed(2) + '%';
+  }
+  window.addEventListener('scroll', paintBar, {passive:true});
+  window.addEventListener('resize', paintBar);
+  paintBar();
+
+  var menuBtn = document.getElementById('menuBtn');
+  var sheet = document.getElementById('sheet');
+  var sheetClose = document.getElementById('sheetClose');
+
+  function setMenu(open){
+    sheet.setAttribute('data-open', open ? 'true' : 'false');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) sheetClose.focus(); else menuBtn.focus();
+  }
+  menuBtn.addEventListener('click', function(){ setMenu(true); });
+  sheetClose.addEventListener('click', function(){ setMenu(false); });
+  sheet.addEventListener('click', function(e){ if (e.target.tagName === 'A') setMenu(false); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && sheet.getAttribute('data-open') === 'true') setMenu(false);
+  });
+
+  document.querySelectorAll('[data-tabs]').forEach(function(group){
+    var tabs = Array.prototype.slice.call(group.querySelectorAll('[role="tab"]'));
+    function select(idx, focus){
+      tabs.forEach(function(t, i){
+        var on = i === idx;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+        var panel = document.getElementById(t.getAttribute('aria-controls'));
+        if (panel) panel.hidden = !on;
+      });
+      if (focus) tabs[idx].focus();
+    }
+    tabs.forEach(function(t, i){
+      t.addEventListener('click', function(){ select(i, false); });
+      t.addEventListener('keydown', function(e){
+        var next = null;
+        if (e.key === 'ArrowRight') next = (i + 1) % tabs.length;
+        if (e.key === 'ArrowLeft') next = (i - 1 + tabs.length) % tabs.length;
+        if (e.key === 'Home') next = 0;
+        if (e.key === 'End') next = tabs.length - 1;
+        if (next !== null) { e.preventDefault(); select(next, true); }
+      });
+    });
+  });
+
+  var toast = document.getElementById('toast');
+  var toastTimer;
+  function showToast(text){
+    toast.textContent = text;
+    toast.setAttribute('data-show', 'true');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.removeAttribute('data-show'); }, 1800);
+  }
+
+  function legacyCopy(value){
+    var ta = document.createElement('textarea');
+    ta.value = value;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.top = '-1000px';
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (err) { ok = false; }
+    document.body.removeChild(ta);
+    return ok;
+  }
+
+  document.querySelectorAll('[data-copy]').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      var value = btn.getAttribute('data-copy');
+      var done = function(){
+        showToast('Скопировано: ' + value.split('\n')[0]);
+        var old = btn.innerHTML;
+        btn.setAttribute('data-done', 'true');
+        setTimeout(function(){ btn.removeAttribute('data-done'); btn.innerHTML = old; }, 1600);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(value).then(done).catch(function(){
+          if (legacyCopy(value)) showToast('Скопировано'); else showToast('Не удалось скопировать');
+        });
+      } else {
+        if (legacyCopy(value)) showToast('Скопировано'); else showToast('Не удалось скопировать');
+      }
+    });
+  });
+
+  var KEY = 'navigator-steps-v2';
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('#steps input[data-step]'));
+  var counter = document.getElementById('stepsCount');
+  var fill = document.getElementById('pbarFill');
+
+  function readState(){
+    try {
+      var raw = window.localStorage.getItem(KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch (err) { return []; }
+  }
+  function writeState(arr){ try { window.localStorage.setItem(KEY, JSON.stringify(arr)); } catch (err) {} }
+  function render(){
+    var done = boxes.filter(function(b){ return b.checked; });
+    if (counter) counter.textContent = done.length + ' из ' + boxes.length;
+    if (fill) fill.style.width = (boxes.length ? (done.length / boxes.length) * 100 : 0) + '%';
+  }
+
+  if (boxes.length) {
+    var saved = readState();
+    boxes.forEach(function(b){
+      b.checked = saved.indexOf(b.getAttribute('data-step')) !== -1;
+      b.addEventListener('change', function(){
+        var state = boxes.filter(function(x){ return x.checked; }).map(function(x){ return x.getAttribute('data-step'); });
+        writeState(state);
+        render();
+      });
+    });
+    render();
+
+    var reset = document.getElementById('resetSteps');
+    if (reset) reset.addEventListener('click', function(){
+      boxes.forEach(function(b){ b.checked = false; });
+      writeState([]);
+      render();
+      showToast('Прогресс сброшен');
+    });
+  }
+
+  var topBar = document.querySelector('.top');
+  var heroEl = document.querySelector('.hero');
+  function paintTop(){
+    if (!topBar || !heroEl) return;
+    var past = window.scrollY > heroEl.offsetHeight - topBar.offsetHeight;
+    topBar.classList.toggle('is-hero', !past);
+  }
+  window.addEventListener('scroll', paintTop, {passive:true});
+  window.addEventListener('resize', paintTop);
+  paintTop();
+
+    function bindModal(modalId, openSel, closeSel){
+    var modal = document.getElementById(modalId);
+    if (!modal) return;
+    var openers = Array.prototype.slice.call(document.querySelectorAll(openSel));
+    var closers = Array.prototype.slice.call(document.querySelectorAll(closeSel));
+    var lastFocus = null;
+    function set(open){
+      modal.hidden = !open;
+      document.body.style.overflow = open ? 'hidden' : '';
+      if (open) { lastFocus = document.activeElement; modal.querySelector('.modal__close').focus(); }
+      else if (lastFocus) { lastFocus.focus(); }
+    }
+    openers.forEach(function(b){ b.addEventListener('click', function(){ set(true); }); });
+    closers.forEach(function(b){ b.addEventListener('click', function(){ set(false); }); });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && !modal.hidden) set(false);
+    });
+  }
+  bindModal('hrModal', '[data-open-hr]', '[data-close-hr]');
+  bindModal('actModal', '[data-open-act]', '[data-close-act]');
+
+
+  var accModal = document.getElementById('accModal');
+  if (accModal) {
+    var accBtns = Array.prototype.slice.call(document.querySelectorAll('[data-acc]'));
+    var accClosers = Array.prototype.slice.call(document.querySelectorAll('[data-close-acc]'));
+    var accTitle = document.getElementById('accModalTitle');
+    var accSub = document.getElementById('accModalSub');
+    var accPanels = Array.prototype.slice.call(accModal.querySelectorAll('.panel'));
+    var accLastFocus = null;
+    function setAcc(open, title, id){
+      accModal.hidden = !open;
+      document.body.style.overflow = open ? 'hidden' : '';
+      if (open) {
+        accLastFocus = document.activeElement;
+        accTitle.textContent = title || '';
+        var active = null;
+        accPanels.forEach(function(panel){
+          var on = panel.id === id;
+          panel.hidden = !on;
+          if (on) active = panel;
+        });
+        var sub = active ? active.querySelector('.sub-p') : null;
+        accSub.textContent = sub ? sub.textContent : '';
+        accModal.querySelector('.modal__close').focus();
+      } else if (accLastFocus) {
+        accLastFocus.focus();
+      }
+    }
+    accBtns.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        setAcc(true, btn.getAttribute('data-title'), btn.getAttribute('data-acc'));
+      });
+    });
+    accClosers.forEach(function(el){ el.addEventListener('click', function(){ setAcc(false); }); });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && !accModal.hidden) setAcc(false);
+    });
+  }
+
+  var targets = Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
+  if ('IntersectionObserver' in window && links.length) {
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (!entry.isIntersecting) return;
+        var id = entry.target.id;
+        links.forEach(function(a){
+          if (a.getAttribute('href') === '#' + id) a.setAttribute('aria-current', 'true');
+          else a.removeAttribute('aria-current');
+        });
+      });
+    }, {rootMargin: '-45% 0px -50% 0px', threshold: 0});
+    targets.forEach(function(t){ spy.observe(t); });
+  }
+
+  (function(){
+    var hero = document.getElementById('hero');
+    if (!hero) return;
+    var pin = hero.querySelector('.hero-pin');
+    var wrap = hero.querySelector('.hero-cards');
+    var copy = hero.querySelector('.hero-copy');
+    var hint = hero.querySelector('.hero-hint');
+    if (!pin || !wrap || !copy) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var SHOTS = [
+      "img/hero-01.jpg",
+      "img/hero-02.jpg",
+      "img/hero-03.jpg",
+      "img/hero-04.jpg",
+      "img/hero-05.jpg",
+      "img/hero-06.jpg",
+      "img/hero-07.jpg",
+      "img/hero-08.jpg",
+      "img/hero-09.jpg"
+    ];
+
+    var N = SHOTS.length;
+    var STAGGER = 0.5;
+    var cards = [];
+    var pw = 0, ph = 0, pan = 45, farZ = -1700, nearZ = 500, isMobile = false, cardW = 226, persp = 1200;
+
+    for (var i = 0; i < N; i++) {
+      var ang = i * 137.5 * Math.PI / 180;
+      var el = document.createElement('div');
+      el.className = 'hero-card';
+      var im = document.createElement('img');
+      im.src = SHOTS[i];
+      im.alt = '';
+      im.draggable = false;
+      im.decoding = 'async';
+      el.appendChild(im);
+      var w = document.createElement('div');
+      w.className = 'hero-scatter';
+      w.appendChild(el);
+      wrap.appendChild(w);
+      cards.push({
+        el: el,
+        wrap: w,
+        cos: Math.cos(ang),
+        sin: Math.sin(ang),
+        rx: 0.34 + (i % 3) * 0.09,
+        ry: 0.30 + (i % 2) * 0.10,
+        lane: (i % 2 === 0 ? -1 : 1),
+        rot: (i % 2 === 0 ? 1 : -1) * (3 + (i % 5) * 2),
+        start: (i / N) * 0.3
+      });
+    }
+
+    function measure(){
+      var r = pin.getBoundingClientRect();
+      pw = r.width;
+      ph = r.height;
+      var mobile = window.innerWidth < 760;
+      isMobile = mobile;
+      persp = mobile ? 900 : 1200;
+      pan = mobile ? 16 : 45;
+      farZ = mobile ? -1100 : -1700;
+      nearZ = mobile ? 210 : 300;
+      var cw = mobile ? Math.max(112, Math.min(150, pw * 0.34)) : Math.max(160, Math.min(226, pw * 0.152));
+      cardW = cw;
+      for (var k = 0; k < cards.length; k++) cards[k].el.style.width = cw.toFixed(1) + 'px';
+    }
+
+    var CYCLE = 9000;
+    var BOOST_MAX = 3;
+    var anims = [], boost = 0, lastY = 0, decayOn = false;
+    var scatters = [], scatterQueued = false;
+
+    for (var m = 0; m < cards.length; m++) cards[m].offset = m / cards.length;
+
+    function cardTransform(c, k){
+      var sgn = c.cos < 0 ? -1 : 1;
+      var spread = (isMobile ? 0.26 : 0.3) + (isMobile ? 0.14 : 0.18) * Math.abs(c.cos);
+      var x = sgn * spread * pw;
+      var y = (c.sin * c.ry + c.lane * 0.07) * ph;
+      return 'translate(-50%,-50%) translate(' + (x * k).toFixed(1) + 'px,' + (y * k).toFixed(1) + 'px) scale(' + k.toFixed(3) + ') rotate(' + c.rot + 'deg)';
+    }
+
+    function applyRate(){
+      var r = 1 + boost * 2.2;
+      for (var i = 0; i < anims.length; i++) anims[i].playbackRate = r;
+    }
+
+    function buildAnims(){
+      for (var i = 0; i < anims.length; i++) { try { anims[i].cancel(); } catch (e) {} }
+      anims = [];
+      var kFar = persp / (persp - farZ);
+      var kNear = persp / (persp - nearZ);
+      var kAt = function(p){ return kFar + (kNear - kFar) * Math.pow(p, 0.85); };
+      var K = isMobile ? 5 : 7;
+      if (K > cards.length) K = cards.length;
+      for (var j = 0; j < cards.length; j++) {
+        var c = cards[j];
+        if (j >= K) { c.el.style.display = 'none'; continue; }
+        c.el.style.display = '';
+        if (!c.el.animate) {
+          c.el.style.transform = cardTransform(c, kFar * 1.45);
+          c.el.style.opacity = '0.8';
+          continue;
+        }
+        var a = c.el.animate([
+          { transform: cardTransform(c, kAt(0)), opacity: 0 },
+          { transform: cardTransform(c, kAt(0.2)), opacity: 1, offset: 0.2 },
+          { transform: cardTransform(c, kAt(0.52)), opacity: 1, offset: 0.52 },
+          { transform: cardTransform(c, kAt(0.72)), opacity: 0, offset: 0.72 },
+          { transform: cardTransform(c, kAt(1)), opacity: 0 }
+        ], { duration: CYCLE, iterations: Infinity, easing: 'linear' });
+        a.currentTime = (j / K) * CYCLE;
+        anims.push(a);
+      }
+      applyRate();
+      buildScatter();
+      updateScatter();
+    }
+
+    function buildScatter(){
+      for (var i = 0; i < scatters.length; i++) { try { scatters[i].a.cancel(); } catch (e) {} }
+      scatters = [];
+      for (var j = 0; j < cards.length; j++) {
+        var c = cards[j];
+        if (!c.wrap || !c.wrap.animate) continue;
+        var dx = (c.cos >= 0 ? 1 : -1) * (0.16 + 0.18 * Math.abs(c.cos)) * pw;
+        var dy = (c.sin >= 0 ? 1 : -1) * (0.12 + 0.16 * Math.abs(c.sin)) * ph;
+        var a = c.wrap.animate([
+          { transform: 'translate(0px,0px) rotate(0deg)', opacity: 1 },
+          { transform: 'translate(' + dx.toFixed(1) + 'px,' + dy.toFixed(1) + 'px) rotate(' + (c.rot >= 0 ? 10 : -10) + 'deg)', opacity: 0.25 }
+        ], { duration: 1000, iterations: 1, fill: 'both', easing: 'linear' });
+        a.pause();
+        a.currentTime = 0;
+        scatters.push({ a: a, d: (j % 4) * 0.06 });
+      }
+    }
+
+    function updateScatter(){
+      if (!scatters.length) return;
+      var h = hero.offsetHeight || 1;
+      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+      var p = y / (h * 0.55);
+      p = p < 0 ? 0 : p > 1 ? 1 : p;
+      var e = p * p * (3 - 2 * p);
+      for (var i = 0; i < scatters.length; i++) {
+        var s = scatters[i];
+        var t = (e - s.d) / (1 - s.d);
+        t = t < 0 ? 0 : t > 1 ? 1 : t;
+        s.a.currentTime = t * 1000;
+      }
+    }
+
+    function decay(){
+      boost *= 0.94;
+      if (boost < 0.01) { boost = 0; applyRate(); decayOn = false; return; }
+      applyRate();
+      requestAnimationFrame(decay);
+    }
+
+    hero.classList.add('hero--auto');
+    measure();
+    lastY = window.pageYOffset || document.documentElement.scrollTop || 0;
+    buildAnims();
+
+    var coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    window.addEventListener('scroll', function(){
+      if (!scatterQueued) {
+        scatterQueued = true;
+        requestAnimationFrame(function(){ scatterQueued = false; updateScatter(); });
+      }
+      if (coarse) return;
+      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+      var d = Math.abs(y - lastY);
+      lastY = y;
+      if (d > 0.5) boost = Math.min(BOOST_MAX, boost + Math.min(d, 240) / 70);
+      applyRate();
+      if (!decayOn) { decayOn = true; requestAnimationFrame(decay); }
+    }, {passive: true});
+
+    var rt, lastW = window.innerWidth;
+    window.addEventListener('resize', function(){
+      if (Math.abs(window.innerWidth - lastW) < 8) return;
+      lastW = window.innerWidth;
+      clearTimeout(rt);
+      rt = setTimeout(function(){ measure(); buildAnims(); }, 200);
+    });
+
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function(entries){
+        for (var i = 0; i < anims.length; i++) {
+          if (entries[0].isIntersecting) anims[i].play(); else anims[i].pause();
+        }
+      }, {threshold: 0.01}).observe(hero);
+    }
+
+    document.addEventListener('visibilitychange', function(){
+      for (var i = 0; i < anims.length; i++) {
+        if (document.hidden) anims[i].pause(); else anims[i].play();
+      }
+    });
+
+    if (!(window.matchMedia && window.matchMedia('(hover: none)').matches)) {
+      window.addEventListener('pointermove', function(e){
+        var px = (e.clientX / window.innerWidth - 0.5) * 2;
+        var py = (e.clientY / vh() - 0.5) * 2;
+        wrap.style.transform = 'translate3d(' + (px * -10).toFixed(1) + 'px,' + (py * -8).toFixed(1) + 'px,0)';
+      }, {passive: true});
+    }
+})();
+
+  (function(){
+    var sec = document.getElementById('values');
+    if (!sec) return;
+    var track = sec.querySelector('.stack-track');
+    var deck = sec.querySelector('.stack-deck');
+    if (!track || !deck) return;
+    var cards = Array.prototype.slice.call(sec.querySelectorAll('.vcard'));
+    var n = cards.length;
+    if (n < 2) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var PER_CARD = 0.72;
+    var TAIL = 0.4;
+    var step = -1;
+
+    function clamp(v, a, b){ return v < a ? a : v > b ? b : v; }
+
+    function pose(s, i){
+      if (i > s) return { y: 96, scale: 0.88, rx: 16, rz: i % 2 ? 4 : -4, opacity: 0 };
+      var depth = clamp(s - i, 0, 4);
+      return {
+        y: -depth * 2.6,
+        scale: 1 - depth * 0.06,
+        rx: -depth * 8,
+        rz: 0,
+        opacity: 1
+      };
+    }
+
+    function apply(s){
+      if (s === step) return;
+      var jump = step >= 0 && Math.abs(s - step) > 1;
+      if (jump) sec.classList.add('stack--noanim');
+      step = s;
+      if (jump) requestAnimationFrame(function(){ sec.classList.remove('stack--noanim'); });
+      for (var i = 0; i < n; i++){
+        var q = pose(s, i), c = cards[i];
+        c.style.transform = 'translate3d(0,' + q.y.toFixed(3) + '%,0) perspective(1400px) rotateX(' + q.rx.toFixed(2) + 'deg) rotateZ(' + q.rz.toFixed(2) + 'deg) scale(' + q.scale.toFixed(4) + ')';
+        c.style.opacity = q.opacity;
+      }
+    }
+
+    function layout(){
+      var h = vh();
+      track.style.height = Math.round(h * (1 + PER_CARD * (n - 1) + TAIL)) + 'px';
+    }
+
+    function currentStep(){
+      var r = track.getBoundingClientRect();
+      var unit = vh() * PER_CARD;
+      return Math.round(clamp(unit > 0 ? -r.top / unit : 0, 0, n - 1));
+    }
+
+    sec.classList.add('stack--live');
+    layout();
+    apply(currentStep());
+    void track.offsetHeight;
+    sec.classList.add('stack--animated');
+
+    window.addEventListener('scroll', function(){ apply(currentStep()); }, {passive: true});
+    window.addEventListener('resize', function(){ layout(); apply(currentStep()); });
+  })();
+
+  var reveals = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {rootMargin: '0px 0px -8% 0px', threshold: 0.05});
+    reveals.forEach(function(el){ io.observe(el); });
+    setTimeout(function(){ reveals.forEach(function(el){ el.classList.add('in'); }); }, 5000);
+  } else {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  }
+})();
+</script>
+
+<script>
+(function(){
+  var pill = document.getElementById('mpill');
+  if (!pill) return;
+  var tabs = document.getElementById('mpillTabs');
+  var links = document.getElementById('mpillLinks');
+  var btn = document.getElementById('mpillBtn');
+  var src = document.querySelectorAll('.top .nav a');
+  for (var i = 0; i < src.length; i++) {
+    var href = src[i].getAttribute('href');
+    var text = src[i].textContent.trim();
+    var t = document.createElement('a'); t.href = href; t.textContent = text; tabs.appendChild(t);
+    var p = document.createElement('a'); p.href = href; p.textContent = text; links.appendChild(p);
+  }
+  var tabLinks = [].slice.call(tabs.querySelectorAll('a'));
+  var secs = [];
+  for (var k = 0; k < tabLinks.length; k++) {
+    var sid = tabLinks[k].getAttribute('href').slice(1);
+    var sel = document.getElementById(sid);
+    if (sel) secs.push({ id: sid, el: sel });
+  }
+  var activeId = '';
+  function setActive(id){
+    if (id === activeId) return;
+    activeId = id;
+    for (var n = 0; n < tabLinks.length; n++) {
+      if (tabLinks[n].getAttribute('href') === '#' + id) {
+        tabLinks[n].setAttribute('aria-current', 'true');
+        var left = tabLinks[n].offsetLeft - (tabs.clientWidth - tabLinks[n].offsetWidth) / 2;
+        if (n === 0) left = 0;
+        if (n === tabLinks.length - 1) left = tabs.scrollWidth;
+        if (tabs.scrollTo) tabs.scrollTo({ left: left, behavior: 'smooth' }); else tabs.scrollLeft = left;
+      } else {
+        tabLinks[n].removeAttribute('aria-current');
+      }
+    }
+  }
+  function trackActive(){
+    var y = (window.pageYOffset || 0) + 140;
+    var cur = secs.length ? secs[0].id : '';
+    for (var n = 0; n < secs.length; n++) {
+      var top = secs[n].el.getBoundingClientRect().top + (window.pageYOffset || 0);
+      if (top <= y) cur = secs[n].id;
+    }
+    setActive(cur);
+  }
+  function edge(){
+    var max = tabs.scrollWidth - tabs.clientWidth;
+    var v = 'both';
+    if (max <= 2) v = 'none';
+    else if (tabs.scrollLeft <= 2) v = 'start';
+    else if (tabs.scrollLeft >= max - 2) v = 'end';
+    tabs.setAttribute('data-edge', v);
+  }
+  tabs.addEventListener('scroll', edge, {passive: true});
+  window.addEventListener('resize', edge);
+  edge();
+  var actTick = false;
+  window.addEventListener('scroll', function(){
+    if (actTick) return;
+    actTick = true;
+    requestAnimationFrame(function(){ actTick = false; trackActive(); });
+  }, {passive: true});
+  trackActive();
+  function set(open){ pill.setAttribute('data-open', open ? 'true' : 'false'); btn.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+  btn.addEventListener('click', function(e){ e.stopPropagation(); set(pill.getAttribute('data-open') !== 'true'); });
+  pill.addEventListener('click', function(e){ if (e.target.closest('a') || e.target.closest('.mpill-close')) set(false); });
+  document.addEventListener('click', function(e){ if (!pill.contains(e.target)) set(false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') set(false); });
+})();
+</script>
+
+</body>
+</html>
